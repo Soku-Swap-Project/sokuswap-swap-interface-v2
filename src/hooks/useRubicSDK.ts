@@ -47,7 +47,7 @@ export const useRubicSDK = () => {
         mainRpc: process.env.NEXT_PUBLIC_AURORA_RPC!,
       },
     },
-    providerAddress: '0x0000000000000000000000000000000000000000',
+    providerAddress: '0xeEEA4E4961d20021DE36733bF66B33d91a3F7Bc2',
     walletProvider,
   }
   const [sdk, setSdk] = useState<SDK | null>()
