@@ -2,7 +2,7 @@ import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { classNames } from 'app/functions/styling'
 // @ts-ignore TYPE NEEDS FIXING
-import cookieCutter from 'cookie-cutter'
+// import cookieCutter from 'cookie-cutter'
 import { useRouter } from 'next/router'
 import React, { Fragment } from 'react'
 
@@ -60,10 +60,10 @@ export default function LangSwitcher() {
           {locales?.map((l, index) => {
             return (
               <Menu.Item
-                onClick={() => {
-                  cookieCutter.set('NEXT_LOCALE', l)
-                  push(asPath, undefined, { locale: l })
-                }}
+                // onClick={() => {
+                //   cookieCutter.set('NEXT_LOCALE', l)
+                //   push(asPath, undefined, { locale: l })
+                // }}
                 key={index}
               >
                 {({ active }) => {

@@ -76,7 +76,7 @@ const FormTextField: FC<FormTextFieldProps> = ({
         )}
       </div>
       {!!errors[name] ? (
-        <FormFieldHelperText className="!text-red">{errors[name].message}</FormFieldHelperText>
+        <FormFieldHelperText className="!text-red">{errors[name]?.message}</FormFieldHelperText>
       ) : error ? (
         <FormFieldHelperText className="!text-red">{error}</FormFieldHelperText>
       ) : typeof helperText === 'string' ? (

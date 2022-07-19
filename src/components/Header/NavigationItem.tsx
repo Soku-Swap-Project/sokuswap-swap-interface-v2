@@ -1,5 +1,4 @@
 import { Popover } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/outline'
 import { MenuItem, MenuItemLeaf } from 'app/components/Header/useMenu'
 import Typography from 'app/components/Typography'
 import { classNames } from 'app/functions'
@@ -56,7 +55,7 @@ export const NavigationItem: FC<NavigationItem> = ({ node }) => {
             <Typography
               weight={700}
               style={{ padding: '12px', color: '#05195a', borderRadius: '14px' }}
-              variant="md"
+              variant="sm"
               className={classNames(
                 open ? 'text-white' : '',
                 'hover_shadow_button font-bold py-5 px-2 rounded flex gap-3 items-center'

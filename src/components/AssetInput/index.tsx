@@ -380,8 +380,8 @@ const AssetInputWalletSwitch: FC<AssetInputWalletSwitchProps> = ({ checked, onCh
         <div className="order-2 lg:order-1">
           <Switch
             id={id}
-            checked={checked}
-            onChange={onChange}
+            // checked={checked}
+            // onChange={onChange}
             checkedIcon={
               <div className="flex items-center justify-center w-full h-full text-dark-700">
                 <WalletIcon width={16} height={14} />

@@ -36,8 +36,6 @@ if (typeof window !== 'undefined' && !!window.ethereum) {
   window.ethereum.autoRefreshOnNetworkChange = false
 }
 
-import { ExternalProvider } from '@ethersproject/providers'
-import { ethers } from 'ethers'
 import { NextWebVitalsMetric } from 'next/app'
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
