@@ -3,7 +3,6 @@ import { useLingui } from '@lingui/react'
 import { Currency } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
-import QuestionHelper from 'app/components/QuestionHelper'
 import Typography from 'app/components/Typography'
 import { COMMON_BASES } from 'app/config/routing'
 import { currencyId } from 'app/functions'
@@ -24,7 +23,7 @@ const CommonBases: FC = () => {
       <div className="flex flex-row">
         <Typography variant="xs" weight={700} className="flex items-center text-low-emphesis">
           {i18n._(t`Common bases`)}
-          <QuestionHelper text="These tokens are commonly paired with other tokens." />
+          {/* <QuestionHelper text="These tokens are commonly paired with other tokens." /> */}
         </Typography>
       </div>
       <div className="flex flex-wrap gap-2">
