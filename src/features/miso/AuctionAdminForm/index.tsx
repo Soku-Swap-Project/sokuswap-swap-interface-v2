@@ -1,18 +1,18 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import Button from 'app/components/Button'
+// import Button from 'app/components/Button'
 import Form from 'app/components/Form'
 import Typography from 'app/components/Typography'
 import AuctionAdminFormWhitelistSection from 'app/features/miso/AuctionAdminForm/AuctionAdminFormWhitelistSection'
-import BannedCountries from 'app/features/miso/AuctionAdminForm/BannedCountries'
+// import BannedCountries from 'app/features/miso/AuctionAdminForm/BannedCountries'
 import AuctionCard from 'app/features/miso/AuctionCard'
 import { Auction } from 'app/features/miso/context/Auction'
 import { DocumentInput } from 'app/features/miso/context/hooks/useAuctionDocuments'
 import useAuctionEdit from 'app/features/miso/context/hooks/useAuctionEdit'
-import { AuctionCategory, AuctionDocument, AuctionStatus } from 'app/features/miso/context/types'
-import { classNames } from 'app/functions'
-import { enumToArray } from 'app/functions/array/enumToArray'
+import { AuctionDocument } from 'app/features/miso/context/types'
+// import { classNames } from 'app/functions'
+// import { enumToArray } from 'app/functions/array/enumToArray'
 import React, { FC, useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
@@ -151,7 +151,7 @@ const AuctionAdminForm: FC<AuctionAdminFormProps> = ({ auction }) => {
   return (
     <div className="flex flex-col gap-10 lg:flex-row">
       <div className="flex flex-col gap-10">
-        <Form {...methods} onSubmit={methods.handleSubmit(onSubmit)}>
+        {/* <Form {...methods} onSubmit={methods.handleSubmit(onSubmit)}>
           <Form.Card>
             <Form.Section
               header={
@@ -323,7 +323,7 @@ const AuctionAdminForm: FC<AuctionAdminFormProps> = ({ auction }) => {
               </div>
             </Form.Submit>
           </Form.Card>
-        </Form>
+        </Form> */}
 
         <Form.Card>
           <AuctionAdminFormWhitelistSection auction={auction} />

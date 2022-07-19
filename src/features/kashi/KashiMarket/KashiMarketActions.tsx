@@ -1,15 +1,15 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { Menu, Transition } from '@headlessui/react'
+import { Menu } from '@headlessui/react'
 import { DotsVerticalIcon } from '@heroicons/react/solid'
 import { i18n } from '@lingui/core'
 import { t } from '@lingui/macro'
 import { JSBI, maximum, Percent, ZERO } from '@sushiswap/core-sdk'
 import { ACTION_ACCRUE, KashiMediumRiskLendingPair } from '@sushiswap/kashi-sdk'
-import QuestionHelper from 'app/components/QuestionHelper'
-import Typography from 'app/components/Typography'
+// import QuestionHelper from 'app/components/QuestionHelper'
+// import Typography from 'app/components/Typography'
 import { KashiCooker } from 'app/entities'
 import useKashiApproveCallback from 'app/hooks/useKashiApproveCallback'
-import React, { FC, Fragment, useCallback, useMemo } from 'react'
+import React, { FC, useCallback, useMemo } from 'react'
 
 interface KashiMarketActions {
   market: KashiMediumRiskLendingPair
@@ -42,7 +42,7 @@ export const KashiMarketActions: FC<KashiMarketActions> = ({ market }) => {
           </div>
         </Menu.Button>
       </div>
-      <Transition
+      {/* <Transition
         as={Fragment}
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"
@@ -97,7 +97,7 @@ export const KashiMarketActions: FC<KashiMarketActions> = ({ market }) => {
             </Typography>
           </Menu.Item>
         </Menu.Items>
-      </Transition>
+      </Transition> */}
     </Menu>
   )
 }

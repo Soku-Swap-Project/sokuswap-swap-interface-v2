@@ -1,12 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { CurrencyAmount, Token } from '@sushiswap/core-sdk'
-import Button from 'app/components/Button'
-import Form from 'app/components/Form'
 import useAuction from 'app/features/miso/context/hooks/useAuction'
-import LiquidityLauncherCreationFormFindAuction from 'app/features/miso/LiquidityLauncherCreationForm/LiquidityLauncherCreationFormFindAuction'
-import LiquidityLauncherCreationOptions from 'app/features/miso/LiquidityLauncherCreationForm/LiquidityLauncherCreationOptions'
 import LiquidityLauncherCreationReviewModal from 'app/features/miso/LiquidityLauncherCreationForm/LiquidityLauncherCreationReviewModal'
 import { formatData } from 'app/features/miso/LiquidityLauncherCreationForm/utils'
 import { addressValidator } from 'app/functions/yupValidators'
@@ -77,7 +72,7 @@ const AuctionCreationFormLiquidityLauncher: FC = () => {
 
   return (
     <>
-      <Form {...methods} onSubmit={methods.handleSubmit(onSubmit)}>
+      {/* <Form {...methods} onSubmit={methods.handleSubmit(onSubmit)}>
         <Form.Card>
           <LiquidityLauncherCreationFormFindAuction />
           <LiquidityLauncherCreationOptions />
@@ -89,7 +84,7 @@ const AuctionCreationFormLiquidityLauncher: FC = () => {
             </div>
           </Form.Submit>
         </Form.Card>
-      </Form>
+      </Form> */}
       <LiquidityLauncherCreationReviewModal open={open} onDismiss={() => setOpen(false)} data={validatedData} />
     </>
   )

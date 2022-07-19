@@ -1,8 +1,4 @@
-import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import QuestionHelper from 'app/components/QuestionHelper'
-import ToggleButtonGroup from 'app/components/ToggleButton'
-import Typography from 'app/components/Typography'
 import {
   KashiMarketBorrowView,
   KashiMarketDepositView,
@@ -31,7 +27,7 @@ export const KashiMarket: FC<KashiMarketProps> = () => {
   return (
     <SwapLayoutCard>
       <div className="flex flex-col w-full gap-4">
-        <ToggleButtonGroup
+        {/* <ToggleButtonGroup
           size="sm"
           value={view}
           onChange={setView}
@@ -72,7 +68,7 @@ export const KashiMarket: FC<KashiMarketProps> = () => {
             />
           </ToggleButtonGroup.Button>
           <ToggleButtonGroup.Button value={KashiMarketView.WITHDRAW}>{i18n._(t`Withdraw`)}</ToggleButtonGroup.Button>
-        </ToggleButtonGroup>
+        </ToggleButtonGroup> */}
         {view === KashiMarketView.BORROW && <KashiMarketBorrowView />}
         {view === KashiMarketView.REPAY && <KashiMarketRepayView />}
         {view === KashiMarketView.DEPOSIT && <KashiMarketDepositView />}

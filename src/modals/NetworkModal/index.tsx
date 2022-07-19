@@ -1,4 +1,3 @@
-import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import Modal from '@material-ui/core/Modal'
 import { ChainId } from '@sushiswap/core-sdk'
@@ -293,6 +292,8 @@ interface Props {
   disabled?: boolean
 }
 
+const TempModal = Modal as any
+
 const NetworkModal: FC<Props> = ({ selectedChain, setSelectedChain, disabled }) => {
   const { i18n } = useLingui()
   const { chainId, library, account } = useActiveWeb3React()
@@ -340,7 +341,7 @@ const NetworkModal: FC<Props> = ({ selectedChain, setSelectedChain, disabled }) 
         <Typography style={{ paddingLeft: '4px', fontWeight: 'bolder' }}>{networkTest()}</Typography>
       </ButtonDotted>
       {networkModalOpen && (
-        <Modal className="network_modal_container" open={networkModalOpen} onClose={toggleNetworkModal}>
+        <TempModal className="network_modal_container" open={networkModalOpen} onClose={toggleNetworkModal}>
           <div className="flex flex-col gap-6 network_modal">
             <h1 className="text-blue font-bold">Select Network</h1>
             <div className="grid grid-flow-row-dense p-4 grid-cols-1 gap-4 overflow-y-auto md:grid-cols-2">
@@ -435,7 +436,7 @@ const NetworkModal: FC<Props> = ({ selectedChain, setSelectedChain, disabled }) 
                 })}
             </div>
           </div>
-        </Modal>
+        </TempModal>
       )}
     </div>
   )

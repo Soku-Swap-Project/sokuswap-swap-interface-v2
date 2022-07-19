@@ -1,14 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { NATIVE } from '@sushiswap/core-sdk'
-import Button from 'app/components/Button'
-import Form from 'app/components/Form'
-import WhitelistChecker from 'app/features/miso/AuctionAdminForm/AuctionAdminFormWhitelistSection/WhitelistChecker'
-import AuctionPaymentCurrencyField from 'app/features/miso/AuctionAdminForm/AuctionPaymentCurrencyField'
 import { WhitelistEntry } from 'app/features/miso/context/types'
 import PointlistCreationReviewModal from 'app/features/miso/PointlistCreationForm/PointlistCreationReviewModal'
-import WhitelistUpload from 'app/features/miso/WhitelistUpload'
 import { addressValidator } from 'app/functions/yupValidators'
 import { useToken } from 'app/hooks/Tokens'
 import { useActiveWeb3React } from 'app/services/web3'
@@ -59,7 +53,7 @@ const PointlistCreationFormSetup: FC = () => {
 
   return (
     <>
-      <Form {...methods} onSubmit={methods.handleSubmit(onSubmit)}>
+      {/* <Form {...methods} onSubmit={methods.handleSubmit(onSubmit)}>
         <Form.Card>
           <Form.Section columns={6} header={<Form.Section.Header header={i18n._(t`General Details`)} />}>
             <div className="col-span-6">
@@ -88,7 +82,7 @@ const PointlistCreationFormSetup: FC = () => {
             </div>
           </Form.Section>
         </Form.Card>
-      </Form>
+      </Form> */}
       <PointlistCreationReviewModal open={open} onDismiss={() => setOpen(false)} data={data} />
     </>
   )

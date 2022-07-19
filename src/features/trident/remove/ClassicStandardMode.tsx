@@ -7,7 +7,6 @@ import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import Dots from 'app/components/Dots'
 import PercentInput from 'app/components/Input/Percent'
 import ListPanel from 'app/components/ListPanel'
-import ToggleButtonGroup from 'app/components/ToggleButton'
 import Typography from 'app/components/Typography'
 import { usePoolContext } from 'app/features/trident/PoolContext'
 import {
@@ -82,27 +81,27 @@ const ClassicStandardMode: FC = () => {
   const parsedAmounts = useRemoveLiquidityDerivedCurrencyAmounts()
 
   const toggleButtonGroup = (
-    <ToggleButtonGroup
-      value={percentageAmount}
-      onChange={(val: string) => dispatch(setRemovePercentageAmount(val))}
-      variant="outlined"
-      id={`blamanam`}
-      size="sm"
-      className="!bg-dark-900 rounded border border-light-800 h-9"
-    >
-      <ToggleButtonGroup.Button value="25" className="px-6">
-        25%
-      </ToggleButtonGroup.Button>
-      <ToggleButtonGroup.Button value="50" className="px-6">
-        50%
-      </ToggleButtonGroup.Button>
-      <ToggleButtonGroup.Button value="75" className="px-6">
-        75%
-      </ToggleButtonGroup.Button>
-      <ToggleButtonGroup.Button value="100" className="px-6">
-        Max
-      </ToggleButtonGroup.Button>
-    </ToggleButtonGroup>
+    <div>Invalid</div>
+    // <ToggleButtonGroup
+    //   value={percentageAmount}
+    //   onChange={(val: string) => dispatch(setRemovePercentageAmount(val))}
+    //   variant="outlined"
+    //   size="sm"
+    //   className="!bg-dark-900 rounded border border-light-800 h-9"
+    // >
+    //   <ToggleButtonGroup.Button value="25" className="px-6">
+    //     25%
+    //   </ToggleButtonGroup.Button>
+    //   <ToggleButtonGroup.Button value="50" className="px-6">
+    //     50%
+    //   </ToggleButtonGroup.Button>
+    //   <ToggleButtonGroup.Button value="75" className="px-6">
+    //     75%
+    //   </ToggleButtonGroup.Button>
+    //   <ToggleButtonGroup.Button value="100" className="px-6">
+    //     Max
+    //   </ToggleButtonGroup.Button>
+    // </ToggleButtonGroup>
   )
 
   return (

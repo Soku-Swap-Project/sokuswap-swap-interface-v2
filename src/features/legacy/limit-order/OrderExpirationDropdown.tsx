@@ -1,15 +1,15 @@
-import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+// import { Menu, Transition } from '@headlessui/react'
+// import { ChevronDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import QuestionHelper from 'app/components/QuestionHelper'
 import Typography from 'app/components/Typography'
-import { classNames } from 'app/functions'
+// import { classNames } from 'app/functions'
 import { useAppDispatch } from 'app/state/hooks'
 import { setOrderExpiration } from 'app/state/limit-order/actions'
 import { useLimitOrderState } from 'app/state/limit-order/hooks'
 import { OrderExpiration } from 'app/state/limit-order/reducer'
-import React, { FC, Fragment, useCallback, useMemo } from 'react'
+import React, { FC, useCallback, useMemo } from 'react'
 
 const OrderExpirationDropdown: FC = () => {
   const { i18n } = useLingui()
@@ -46,7 +46,7 @@ const OrderExpirationDropdown: FC = () => {
         <QuestionHelper text={i18n._(t`Expiration is the time at which the order will become invalid`)} />
       </Typography>
       <div className="flex items-center justify-between h-full px-4 py-2 border rounded bg-dark-900 border-dark-700 hover:border-dark-600">
-        <Menu as="div" className="relative inline-block w-full text-left">
+        {/* <Menu as="div" className="relative inline-block w-full text-left">
           <Menu.Button className="w-full">
             <div className="flex flex-row items-center justify-between">
               <Typography weight={700} variant="sm">
@@ -90,7 +90,7 @@ const OrderExpirationDropdown: FC = () => {
               })}
             </Menu.Items>
           </Transition>
-        </Menu>
+        </Menu> */}
       </div>
     </div>
   )

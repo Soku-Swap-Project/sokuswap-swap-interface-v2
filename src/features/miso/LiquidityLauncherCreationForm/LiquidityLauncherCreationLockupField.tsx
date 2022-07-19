@@ -1,7 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import Form from 'app/components/Form'
-import ToggleButtonGroup from 'app/components/ToggleButton'
 import Typography from 'app/components/Typography'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC } from 'react'
@@ -20,7 +19,7 @@ const LiquidityLauncherCreationLockupField: FC<LiquidityLauncherCreationLockupFi
     <div className="flex flex-col">
       <div>
         <Typography weight={700}>{i18n._(t`Liquidity Lockup Time`)}</Typography>
-        <ToggleButtonGroup
+        {/* <ToggleButtonGroup
           variant="outlined"
           value={getValues('liqLockTime')}
           onChange={(val: string) => setValue('liqLockTime', val, { shouldValidate: true })}
@@ -32,7 +31,7 @@ const LiquidityLauncherCreationLockupField: FC<LiquidityLauncherCreationLockupFi
           <ToggleButtonGroup.Button value={90} activeClassName="border-purple" className="!bg-none px-5 !py-2.5">
             {i18n._(t`${90} days`)}
           </ToggleButtonGroup.Button>
-        </ToggleButtonGroup>
+        </ToggleButtonGroup> */}
       </div>
       <div className="flex flex-col flex-grow">
         <Form.TextField

@@ -1,18 +1,9 @@
 import { AddressZero } from '@ethersproject/constants'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import {
-  DAI_ADDRESS,
-  FRAX_ADDRESS,
-  MIM_ADDRESS,
-  NATIVE,
-  SUSHI_ADDRESS,
-  USDC_ADDRESS,
-  USDT_ADDRESS,
-} from '@sushiswap/core-sdk'
+import { NATIVE } from '@sushiswap/core-sdk'
 import Form from 'app/components/Form'
 import FormFieldHelperText from 'app/components/Form/FormFieldHelperText'
-import ToggleButtonGroup from 'app/components/ToggleButton'
 import Typography from 'app/components/Typography'
 import { useToken } from 'app/hooks/Tokens'
 import { useActiveWeb3React } from 'app/services/web3'
@@ -38,7 +29,7 @@ const AuctionPaymentCurrencyField: FC<AuctionPaymentCurrencyFieldProps> = ({ nam
     <div className="flex flex-col">
       <div>
         <Typography weight={700}>{label}</Typography>
-        <div className="flex">
+        {/* <div className="flex">
           <ToggleButtonGroup
             size="sm"
             variant="filled"
@@ -47,7 +38,6 @@ const AuctionPaymentCurrencyField: FC<AuctionPaymentCurrencyFieldProps> = ({ nam
             className="flex gap-2 mt-2"
           >
             <ToggleButtonGroup.Button value={AddressZero} className="!px-3 h-[36px]">
-              {/*@ts-ignore TYPE NEEDS FIXING*/}
               {NATIVE[chainId].symbol}
             </ToggleButtonGroup.Button>
             {chainId in SUSHI_ADDRESS && (
@@ -81,7 +71,7 @@ const AuctionPaymentCurrencyField: FC<AuctionPaymentCurrencyFieldProps> = ({ nam
               </ToggleButtonGroup.Button>
             )}
           </ToggleButtonGroup>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col flex-grow">
         <Form.TextField

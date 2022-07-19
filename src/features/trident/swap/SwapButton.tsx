@@ -54,7 +54,7 @@ const SwapButton: FC<SwapButton> = ({ onClick, spendFromWallet = true }) => {
     }
   }, [computedPriceImpact, trade])
 
-  const priceImpactSeverity = useMemo(() => warningSeverity(priceImpact), [priceImpact])
+  const priceImpactSeverity = useMemo(() => warningSeverity(priceImpact as any), [priceImpact])
 
   const handleClick = useCallback(() => {
     if (!trade || !priceImpact || !confirmPriceImpactWithoutFee(priceImpact)) return

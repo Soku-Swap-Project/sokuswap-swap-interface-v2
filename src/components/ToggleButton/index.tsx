@@ -1,8 +1,6 @@
-import { RadioGroup as HeadlessRadioGroup } from '@headlessui/react'
-import Button, { ButtonProps } from 'app/components/Button'
-import { Children, cloneElement, ComponentProps, FC, Fragment, isValidElement } from 'react'
-
-import { classNames } from '../../functions'
+// import { RadioGroup as HeadlessRadioGroup } from '@headlessui/react'
+import { ButtonProps } from 'app/components/Button'
+import { ComponentProps, FC } from 'react'
 
 const FILLED = {
   group: 'border border-light-800 rounded p-0.5 bg-dark-900',
@@ -27,58 +25,48 @@ const VARIANTS = {
   outlined: OUTLINED,
 }
 
-type Props = ComponentProps<typeof HeadlessRadioGroup> & Omit<ButtonProps, 'onChange'>
+type Props = ComponentProps<any> & Omit<ButtonProps, 'onChange'>
 type ToggleButtonGroup<P> = FC<P> & {
-  Button: FC<ComponentProps<typeof HeadlessRadioGroup.Option>>
+  Button: FC<ComponentProps<any>>
 }
 
-const ToggleButtonGroup: ToggleButtonGroup<Props> = ({
-  children,
-  size,
-  className = '',
-  variant = 'filled',
-  ...props
-}) => {
-  return (
-    <HeadlessRadioGroup
-      {...props}
-      // @ts-ignore TYPE NEEDS FIXING
-      className={classNames(className, `flex bg-dark-1000/40 rounded-full`, VARIANTS[variant].group)}
-    >
-      {Children.map(children, (child) => {
-        if (isValidElement(child)) {
-          return cloneElement(child, {
-            variant,
-            size,
-            style: { width: `calc(100% / ${Children.toArray(children).length})` },
-          })
-        }
+// const ToggleButtonGroup = ({ children, size = '', className = '', variant = 'filled', ...props }) => {
+//   return (
+//     <div
+//       {...props}
+//       // @ts-ignore TYPE NEEDS FIXING
+//       className={classNames(className, `flex bg-dark-1000/40 rounded-full`, VARIANTS[variant].group)}
+//     >
+//       {Children.map(children, (child) => {
+//         if (isValidElement(child)) {
+//           return cloneElement(child, {})
+//         }
 
-        return child
-      })}
-    </HeadlessRadioGroup>
-  )
-}
+//         return child
+//       })}
+//     </div>
+//   )
+// }
 
-type ToggleButtonProps = ComponentProps<typeof HeadlessRadioGroup.Option>
-ToggleButtonGroup.Button = ({ value, children, size, style, className }: ToggleButtonProps) => {
-  return (
-    <HeadlessRadioGroup.Option value={value} as={Fragment}>
-      {({ checked }) => (
-        <Button
-          style={style}
-          size={size}
-          id={`radio-option-${value}`}
-          variant={checked ? 'filled' : 'empty'}
-          color={checked ? 'blue' : 'gray'}
-          className={className}
-          type="button"
-        >
-          {children}
-        </Button>
-      )}
-    </HeadlessRadioGroup.Option>
-  )
-}
+// type ToggleButtonProps = ComponentProps<any>
+// ToggleButtonGroup.Button = ({ value, children, size, style, className }: ToggleButtonProps) => {
+//   return (
+//     <HeadlessRadioGroup.Option value={value} as={Fragment}>
+//       {({ checked }) => (
+//         <Button
+//           style={style}
+//           size={size}
+//           id={`radio-option-${value}`}
+//           variant={checked ? 'filled' : 'empty'}
+//           color={checked ? 'blue' : 'gray'}
+//           className={className}
+//           type="button"
+//         >
+//           {children}
+//         </Button>
+//       )}
+//     </HeadlessRadioGroup.Option>
+//   )
+// }
 
 export default ToggleButtonGroup
