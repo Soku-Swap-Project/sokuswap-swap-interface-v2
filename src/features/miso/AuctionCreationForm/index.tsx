@@ -1,11 +1,10 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { Currency, CurrencyAmount, NATIVE, Price, Token } from '@sushiswap/core-sdk'
-import Button from 'app/components/Button'
-import Form from 'app/components/Form'
-import AuctionCreationFormGeneralDetails from 'app/features/miso/AuctionCreationForm/AuctionCreationFormGeneralDetails'
-import AuctionCreationFormTypeSelector from 'app/features/miso/AuctionCreationForm/AuctionCreationFormTypeSelector'
+// import Button from 'app/components/Button'
+// import Form from 'app/components/Form'
+// import AuctionCreationFormGeneralDetails from 'app/features/miso/AuctionCreationForm/AuctionCreationFormGeneralDetails'
+// import AuctionCreationFormTypeSelector from 'app/features/miso/AuctionCreationForm/AuctionCreationFormTypeSelector'
 import AuctionCreationReviewModal from 'app/features/miso/AuctionCreationForm/AuctionCreationReviewModal'
 import { formatCreationFormData } from 'app/features/miso/AuctionCreationForm/utils'
 import { AuctionTemplate } from 'app/features/miso/context/types'
@@ -156,7 +155,7 @@ const AuctionCreationForm: FC = () => {
 
   return (
     <>
-      <Form {...methods} onSubmit={methods.handleSubmit(handleSubmit)}>
+      {/* <Form {...methods} onSubmit={methods.handleSubmit(handleSubmit)}>
         <Form.Card>
           <AuctionCreationFormTypeSelector />
           <AuctionCreationFormGeneralDetails />
@@ -168,7 +167,7 @@ const AuctionCreationForm: FC = () => {
             </div>
           </Form.Submit>
         </Form.Card>
-      </Form>
+      </Form> */}
       <AuctionCreationReviewModal open={open} onDismiss={() => setOpen(false)} data={formattedData} />
     </>
   )

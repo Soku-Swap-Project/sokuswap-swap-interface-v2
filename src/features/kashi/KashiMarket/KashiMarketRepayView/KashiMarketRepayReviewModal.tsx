@@ -71,7 +71,7 @@ export const KashiMarketRepayReviewModal: FC<KashiMarketRepayReviewModal> = ({
     }
   }, [closePosition, execute, removeAmount, removeMax, removeToWallet, repayAmount, repayFromWallet, repayMax, trade])
 
-  const priceImpactSeverity = warningSeverity(trade?.priceImpact)
+  const priceImpactSeverity = warningSeverity(trade?.priceImpact as any)
   const isExpertMode = useIsExpertMode()
 
   return (

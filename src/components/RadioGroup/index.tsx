@@ -1,18 +1,14 @@
+/* eslint-diable */
 import { RadioGroup as HeadlessRadioGroup } from '@headlessui/react'
 import { ComponentProps } from 'react'
-
-import { classNames } from '../../functions'
 import Typography from '../Typography'
+import { classNames } from '../../functions'
 
-const RadioGroup = (props: ComponentProps<typeof HeadlessRadioGroup>) => {
+const RadioGroup = (props: ComponentProps<any>) => {
   return <HeadlessRadioGroup {...props} />
 }
 
-RadioGroup.Option = ({
-  value,
-  children,
-  className = 'space-y-3.5',
-}: ComponentProps<typeof HeadlessRadioGroup.Option>) => {
+RadioGroup.Option = ({ value, children, className = 'space-y-3.5' }: ComponentProps<any>) => {
   return (
     <HeadlessRadioGroup.Option value={value} className={classNames('outline-none', className)}>
       {({ checked }) => (

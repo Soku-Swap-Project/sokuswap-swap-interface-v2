@@ -3,7 +3,7 @@ import { classNames } from 'app/functions'
 import { ComponentProps, FC, ReactNode } from 'react'
 type SwitchColor = 'default' | 'gradient'
 
-type SwitchProps = ComponentProps<typeof HeadlessUiSwitch> & {
+type SwitchProps = ComponentProps<any> & {
   size?: 'xs' | 'sm' | 'md'
   checkedIcon?: ReactNode
   uncheckedIcon?: ReactNode
@@ -39,8 +39,8 @@ const Switch: FC<SwitchProps> = ({
   color = 'default',
   id = '',
 }: SwitchProps) => {
-  const height = HEIGHT[size]
-  const width = WIDTH[size]
+  const height = (HEIGHT as any)[size]
+  const width = (WIDTH as any)[size]
 
   return (
     <HeadlessUiSwitch
@@ -55,7 +55,7 @@ const Switch: FC<SwitchProps> = ({
         id={id}
         className={classNames(
           checked ? 'translate-x-[30px]' : 'translate-x-[2px]',
-          COLOR[color](checked),
+          (COLOR as any)[color](checked),
           `transition-colors transition-transform pointer-events-none p-1 rounded-full shadow-md ease-in-out duration-200 inline-flex items-center justify-center`
         )}
         style={{ height: height - 6, width: height - 6, transform: `translate(${checked ? 30 : 2}, 0)` }}

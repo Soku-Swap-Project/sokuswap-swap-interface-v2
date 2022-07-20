@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Token } from '@sushiswap/core-sdk'
+import { Currency, JSBI, Token } from '@sushiswap/core-sdk'
 import Chip from 'app/components/Chip'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import Loader from 'app/components/Loader'
@@ -25,6 +25,8 @@ import { FixedSizeList as List } from 'react-window'
 function currencyKey(currency: Currency): string {
   return currency.isToken ? currency.address : 'ETHER'
 }
+
+const ZERO = JSBI.BigInt(0)
 
 function Balance({ balance }: { balance: number }) {
   return (

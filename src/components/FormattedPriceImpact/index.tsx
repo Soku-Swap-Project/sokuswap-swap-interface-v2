@@ -13,7 +13,7 @@ const SEVERITY = {
 
 const FormattedPriceImpact: FC<{ priceImpact?: Percent }> = ({ priceImpact }) => {
   return (
-    <Typography variant="sm" className={SEVERITY[warningSeverity(priceImpact)]}>
+    <Typography variant="sm" className={SEVERITY[warningSeverity(priceImpact as any)]}>
       {priceImpact ? `${priceImpact.multiply(-1).toFixed(2)}%` : '-'}
     </Typography>
   )

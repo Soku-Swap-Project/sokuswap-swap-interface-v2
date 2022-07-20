@@ -27,15 +27,16 @@ const MenuLink: FC<{ href?: string; label: string; onClick?(): void }> = ({ href
 
   if (href) {
     return (
-      <Menu.Item onClick={() => router.push(href)}>
-        {({ active }) => {
-          return (
-            <Typography variant="sm" weight={700} onClick={onClick} className={active ? 'text-white' : 'text-primary'}>
-              {label}
-            </Typography>
-          )
-        }}
-      </Menu.Item>
+      <div>Invalid</div>
+      // <Menu.Item onClick={() => router.push(href)}>
+      //   {({ active }) => {
+      //     return (
+      //       <Typography variant="sm" weight={700} onClick={onClick} className={active ? 'text-white' : 'text-primary'}>
+      //         {label}
+      //       </Typography>
+      //     )
+      //   }}
+      // </Menu.Item>
     )
   }
 

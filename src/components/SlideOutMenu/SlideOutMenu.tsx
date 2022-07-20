@@ -9,7 +9,7 @@ import useTransak from 'app/hooks/useTransak'
 import { useActiveWeb3React } from 'app/services/web3'
 import useIsCoinbaseWallet from 'app/hooks/useIsCoinbaseWallet'
 import Web3Network from '../Web3Network'
-import { NETWORK_LABEL, NETWORK_LABEL_SHORT } from 'app/config/networks'
+import { NETWORK_ICON, NETWORK_LABEL, NETWORK_LABEL_SHORT } from 'app/config/networks'
 import { SupportedChainId } from 'app/enums/SupportedChainId'
 import { NavLink } from 'react-router-dom'
 import Link from 'next/link'
@@ -118,8 +118,8 @@ const SlideOutMenu: FC = () => {
         <>
           <Link href="/swap">
             <li
-              style={{ borderRadius: '14px' }}
-              className={'nav_link_mobile hover_shadow' + isTradeActive ? ' shadow active_mobile_link' : ''}
+              style={{ borderRadius: '14px', padding: '14px' }}
+              className="nav_link_mobile hover_shadow emphasized-selected active_mobile_link"
             >
               Trade
             </li>
@@ -155,8 +155,8 @@ const SlideOutMenu: FC = () => {
         <>
           <Link href="/swap">
             <li
-              style={{ borderRadius: '14px' }}
-              className={'nav_link_mobile hover_shadow' + isTradeActive ? ' emphasized-selected' : ''}
+              style={{ borderRadius: '14px', padding: '14px' }}
+              className="nav_link_mobile hover_shadow emphasized-selected active_mobile_link"
             >
               Trade
             </li>
@@ -188,8 +188,8 @@ const SlideOutMenu: FC = () => {
     return (
       <Link href="/swap">
         <li
-          style={{ borderRadius: '14px' }}
-          className={'nav_link_mobile hover_shadow' + isTradeActive ? ' emphasized-selected' : ''}
+          style={{ borderRadius: '14px', padding: '14px' }}
+          className={'nav_link_mobile hover_shadow emphasized-selected active_mobile_link'}
         >
           Trade
         </li>
@@ -231,15 +231,30 @@ const SlideOutMenu: FC = () => {
           <ul>
             <div className="flex flex-col gap-4 px-6">
               {library && (
-                <div className="flex items-center pt-4 text-blue pl-6 bold sm:flex">
+                <div
+                  style={{
+                    display: 'flex',
+                    padding: '10px',
+                    fontWeight: 'bold',
+                    alignItems: 'center',
+                    color: '#05195a',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <img
+                    src={NETWORK_ICON[chainId as number]}
+                    width="24px"
+                    height="24px"
+                    style={{ borderRadius: '24px', objectFit: 'contain', marginRight: '8px' }}
+                    alt="network icon"
+                  />{' '}
                   {NETWORK_LABEL_SHORT[chainId as number]}
-                  <Web3Network />
                 </div>
               )}
             </div>
             <div className="mobile_menu_list">
               {MenuByChain()}
-              <hr style={{ height: '1px', border: 0, backgroundColor: '#05195a' }} />
+              <hr style={{ height: '1px', border: 0, backgroundColor: '#05195a', opacity: '0.2', margin: '20px' }} />
               <a
                 style={{ display: 'flex', color: '#05195a' }}
                 href="https://sokuswap-2.gitbook.io/sokuswap-gitbook/"

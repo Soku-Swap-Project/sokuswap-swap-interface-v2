@@ -1,13 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { CHAIN_KEY } from '@sushiswap/core-sdk'
 import MISO from '@sushiswap/miso/exports/all.json'
-import Button from 'app/components/Button'
-import Form from 'app/components/Form'
-import TokenCreationFormGeneralDetails from 'app/features/miso/TokenCreationForm/TokenCreationFormGeneralDetails'
-import TokenCreationFormTypeSelector from 'app/features/miso/TokenCreationForm/TokenCreationFormTypeSelector'
-import TokenCreationReviewModal from 'app/features/miso/TokenCreationForm/TokenCreationReviewModal'
 import { addressValidator } from 'app/functions/yupValidators'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC, useState } from 'react'
@@ -60,7 +54,8 @@ const TokenCreationForm: FC = ({}) => {
 
   return (
     <>
-      <Form {...methods} onSubmit={methods.handleSubmit(onSubmit)}>
+      Invalid
+      {/* <Form {...methods} onSubmit={methods.handleSubmit(onSubmit)}>
         <Form.Card>
           <TokenCreationFormTypeSelector />
           <TokenCreationFormGeneralDetails />
@@ -73,7 +68,7 @@ const TokenCreationForm: FC = ({}) => {
           </Form.Submit>
         </Form.Card>
       </Form>
-      <TokenCreationReviewModal open={open} onDismiss={() => setOpen(false)} data={data} />
+      <TokenCreationReviewModal open={open} onDismiss={() => setOpen(false)} data={data} /> */}
     </>
   )
 }

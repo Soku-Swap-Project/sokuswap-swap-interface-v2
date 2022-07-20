@@ -2,8 +2,7 @@ import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { HeadlessUiModal } from 'app/components/Modal'
 import QuestionHelper from 'app/components/QuestionHelper'
-import ToggleButtonGroup from 'app/components/ToggleButton'
-import { selectOnsen, setOnsenModalView } from 'app/features/onsen/onsenSlice'
+import { selectOnsen } from 'app/features/onsen/onsenSlice'
 import { classNames } from 'app/functions'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import React, { createContext, ReactNode, useContext, useMemo, useState } from 'react'
@@ -49,7 +48,7 @@ const FarmListItemDetails = ({ farm, onDismiss }) => {
             }
             onClose={onDismiss}
           />
-          <ToggleButtonGroup
+          {/* <ToggleButtonGroup
             size="sm"
             value={view}
             onChange={(view: OnsenModalView) => dispatch(setOnsenModalView(view))}
@@ -60,7 +59,7 @@ const FarmListItemDetails = ({ farm, onDismiss }) => {
             </ToggleButtonGroup.Button>
             <ToggleButtonGroup.Button value={OnsenModalView.Staking}>{i18n._(t`Staking`)}</ToggleButtonGroup.Button>
             <ToggleButtonGroup.Button value={OnsenModalView.Position}>{i18n._(t`Rewards`)}</ToggleButtonGroup.Button>
-          </ToggleButtonGroup>
+          </ToggleButtonGroup> */}
 
           {/*Dont unmount following components to make modal more react faster*/}
           <div className={classNames(COLUMN_CONTAINER, view === OnsenModalView.Position ? 'block' : 'hidden')}>
