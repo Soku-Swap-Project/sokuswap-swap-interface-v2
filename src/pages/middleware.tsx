@@ -1,6 +1,29 @@
-import { ChainSubdomain } from 'app/enums'
+// import { ChainSubdomain } from 'app/enums'
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
+
+const ChainSubdomain = {
+  ETHEREUM: 'ethereum',
+  ROPSTEN: 'ropsten',
+  RINKEBY: 'rinkeby',
+  GÖRLI: 'gorli',
+  KOVAN: 'kovan',
+  POLYGON: 'polygon',
+  FANTOM: 'fantom',
+  GNOSIS: 'gnosis',
+  BSC: 'bsc',
+  ARBITRUM: 'arbitrum',
+  AVALANCHE: 'avalanche',
+  HECO: 'heco',
+  HARMONY: 'harmony',
+  OKEX: 'okex',
+  CELO: 'celo',
+  PALM: 'palm',
+  MOONRIVER: 'moonriver',
+  FUSE: 'fuse',
+  TELOS: 'telos',
+  MOONBEAM: 'moonbeam',
+}
 
 const SUBDOMAIN_CHAIN_ID: { [subdomain: string]: string } = {
   [ChainSubdomain.ETHEREUM]: '1',
