@@ -1,54 +1,62 @@
 {
-    "name": "SokuSwap Menu",
-    "timestamp": "2021-04-19T23:28:37.295Z",
-    "version": {
-        "major": 5,
-        "minor": 10,
-        "patch": 0
+  "name": "SokuSwap Menu",
+  "timestamp": "2021-04-19T23:28:37.295Z",
+  "version": {
+    "major": 5,
+    "minor": 10,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://raw.githubusercontent.com/sushiswap/art/master/sushi/logo-256x256.png",
+  "keywords": ["sokuswap", "default"],
+  "tokens": [
+    {
+      "address": "0x4C3A8ECeB656Ec63eaE80a4ebD565E4887DB6160",
+      "chainId": 1,
+      "name": "Soku",
+      "symbol": "SOKU",
+      "decimals": 18,
+      "logoURI": "https://i.ibb.co/sm60Zb7/Soku-Logo-400x400.png"
     },
-    "tags": {},
-    "logoURI": "https://raw.githubusercontent.com/sushiswap/art/master/sushi/logo-256x256.png",
-    "keywords": ["sokuswap", "default"],
-    "tokens": [
-        {
-            "address": "0x4C3A8ECeB656Ec63eaE80a4ebD565E4887DB6160",
-            "chainId": 1,
-            "name": "Soku",
-            "symbol": "SOKU",
-            "decimals": 18,
-            "logoURI": "https://i.ibb.co/sm60Zb7/Soku-Logo-400x400.png"
-        },
-        {
-            "address": "0xc7230BADF274995F1933598c249c824fDE26F426",
-            "chainId": 1,
-            "name": "Suteku",
-            "symbol": "SUTEKU",
-            "decimals": 18,
-            "logoURI": "https://i.ibb.co/ZfBZpjN/Suteku-Logo.png"
-        },
-        {
-            "address": "0x0e4B5Ea0259eB3D66E6FCB7Cc8785817F8490a53",
-            "chainId": 56,
-            "name": "Soku",
-            "symbol": "SOKU",
-            "decimals": 18,
-            "logoURI": "https://i.ibb.co/sm60Zb7/Soku-Logo-400x400.png"
-        },
-        {
-            "address": "0x198800aF50914004A9E9D19cA18C0b24587a50cf",
-            "chainId": 56,
-            "name": "Suteku",
-            "symbol": "SUTEKU",
-            "decimals": 18,
-            "logoURI": "https://i.ibb.co/ZfBZpjN/Suteku-Logo.png"
-        },
-        {
-            "address": "0x1586fd1298ca598d098e57533aff2927dc920704",
-            "chainId": 56,
-            "name": "Hobi",
-            "symbol": "HOBI",
-            "decimals": 18,
-            "logoURI": "https://i.ibb.co/j5sWKRL/hobi.png"
-        }
-    ]
+    {
+      "address": "0xc7230BADF274995F1933598c249c824fDE26F426",
+      "chainId": 1,
+      "name": "Suteku",
+      "symbol": "SUTEKU",
+      "decimals": 18,
+      "logoURI": "https://i.ibb.co/ZfBZpjN/Suteku-Logo.png"
+    },
+    {
+      "address": "0xDe8239e84c4f31875EA7A22dBdb232c28ac77bE4",
+      "chainId": 1,
+      "name": "Hobi",
+      "symbol": "HOBI",
+      "decimals": 18,
+      "logoURI": "https://i.ibb.co/j5sWKRL/hobi.png"
+    },
+    {
+      "address": "0x0e4B5Ea0259eB3D66E6FCB7Cc8785817F8490a53",
+      "chainId": 56,
+      "name": "Soku",
+      "symbol": "SOKU",
+      "decimals": 18,
+      "logoURI": "https://i.ibb.co/sm60Zb7/Soku-Logo-400x400.png"
+    },
+    {
+      "address": "0x198800aF50914004A9E9D19cA18C0b24587a50cf",
+      "chainId": 56,
+      "name": "Suteku",
+      "symbol": "SUTEKU",
+      "decimals": 18,
+      "logoURI": "https://i.ibb.co/ZfBZpjN/Suteku-Logo.png"
+    },
+    {
+      "address": "0x1586fd1298ca598d098e57533aff2927dc920704",
+      "chainId": 56,
+      "name": "Hobi",
+      "symbol": "HOBI",
+      "decimals": 18,
+      "logoURI": "https://i.ibb.co/j5sWKRL/hobi.png"
+    }
+  ]
 }
