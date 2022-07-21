@@ -118,7 +118,7 @@ const SlideOutMenu: FC = () => {
         <>
           <Link href="/swap">
             <li
-              style={{ borderRadius: '14px', padding: '14px' }}
+              style={{ borderRadius: '7px', padding: '14px' }}
               className="nav_link_mobile hover_shadow emphasized-selected active_mobile_link"
             >
               Trade
@@ -155,7 +155,7 @@ const SlideOutMenu: FC = () => {
         <>
           <Link href="/swap">
             <li
-              style={{ borderRadius: '14px', padding: '14px' }}
+              style={{ borderRadius: '7px', padding: '14px' }}
               className="nav_link_mobile hover_shadow emphasized-selected active_mobile_link"
             >
               Trade
@@ -188,7 +188,7 @@ const SlideOutMenu: FC = () => {
     return (
       <Link href="/swap">
         <li
-          style={{ borderRadius: '14px', padding: '14px' }}
+          style={{ borderRadius: '7px', padding: '14px' }}
           className={'nav_link_mobile hover_shadow emphasized-selected active_mobile_link'}
         >
           Trade

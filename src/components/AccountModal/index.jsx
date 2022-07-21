@@ -70,7 +70,7 @@ export default function AccountModal() {
         <a
           target="_blank"
           className="view_on_scan hover_shadow"
-          style={{ color: '#fff', background: '#05195a', padding: '12px 24px', borderRadius: '14px' }}
+          style={{ color: '#fff', background: '#05195a', padding: '12px 24px', borderRadius: '7px' }}
           href={getExplorerLink(chainId, account, 'address')}
         >
           <h2 className="pr-2">View on Etherscan</h2>

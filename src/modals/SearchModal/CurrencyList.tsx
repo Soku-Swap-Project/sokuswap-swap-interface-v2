@@ -97,7 +97,7 @@ const CurrencyRow: FC<CurrencyRow> = ({ currency, style, selectedChainId }) => {
       id={`token-item-${key}`}
       className={classNames(
         currency === selectedCurrency ? 'opacity-20 pointer-events-none' : '',
-        `flex items-center currency_selector w-full hover:bg-light-800/40 px-4 py-2 token-${currency?.symbol}`
+        `flex items-center coin_selector w-full hover:bg-light-800/40 px-4 py-2 token-${currency?.symbol}`
       )}
       style={style}
       {...(currency !== selectedCurrency && { onClick: () => onSelect(currency) })}

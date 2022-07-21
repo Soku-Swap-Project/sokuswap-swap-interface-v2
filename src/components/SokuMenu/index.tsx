@@ -44,27 +44,29 @@ const SokuMenu: React.FC = (props) => {
       return (
         <>
           <Link href="/swap">
-            <span className={'nav_link hover_shadow' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}>
-              <li style={{ borderRadius: '14px' }}>Trade</li>
+            <span
+              className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
+            >
+              <li style={{ borderRadius: '7px', padding: '7x' }}>Trade</li>
             </span>
           </Link>
-          <a className="nav_link hover_shadow" href={`${origin}/bsc/#/limit-order`}>
+          <a className="nav_link hover_transparent" href={`${origin}/bsc/#/limit-order`}>
             <li>Limit Orders</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bsc/#/pool`}>
+          <a className="nav_link hover_transparent" href={`${origin}/bsc/#/pool`}>
             <li>Pool</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bridge`}>
+          <a className="nav_link hover_transparent" href={`${origin}/bridge`}>
             <li>Bridge</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bsc/farms`}>
+          <a className="nav_link hover_transparent" href={`${origin}/bsc/farms`}>
             <li>Farms</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bsc/staking/`}>
+          <a className="nav_link hover_transparent" href={`${origin}/bsc/staking/`}>
             <li>Staking</li>
           </a>
           <a
-            className="nav_link hover_shadow"
+            className="nav_link hover_transparent"
             onClick={() => {
               launchTransak()
             }}
@@ -77,24 +79,26 @@ const SokuMenu: React.FC = (props) => {
       return (
         <>
           <Link href="/swap">
-            <span className={'nav_link hover_shadow' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}>
-              <li style={{ borderRadius: '14px' }}>Trade</li>
+            <span
+              className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
+            >
+              <li style={{ borderRadius: '7px', padding: '7px' }}>Trade</li>
             </span>
           </Link>
-          <a className="nav_link hover_shadow" href={`${origin}/ethereum/#/pool`}>
+          <a className="nav_link hover_transparent" href={`${origin}/ethereum/#/pool`}>
             <li>Pool</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bridge`}>
+          <a className="nav_link hover_transparent" href={`${origin}/bridge`}>
             <li>Bridge</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/ethereum/farms`}>
+          <a className="nav_link hover_transparent" href={`${origin}/ethereum/farms`}>
             <li>Farms</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/ethereum/staking/`}>
+          <a className="nav_link hover_transparent" href={`${origin}/ethereum/staking/`}>
             <li>Staking</li>
           </a>
           <a
-            className="nav_link hover_shadow"
+            className="nav_link hover_transparent"
             onClick={() => {
               launchTransak()
             }}
@@ -107,8 +111,8 @@ const SokuMenu: React.FC = (props) => {
     return (
       <Link href="/swap">
         <li
-          style={{ borderRadius: '14px', color: '#05195a' }}
-          className={'nav_link hover_shadow' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
+          style={{ borderRadius: '7px', color: '#05195a' }}
+          className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
         >
           Trade
         </li>
@@ -142,7 +146,7 @@ const SokuMenu: React.FC = (props) => {
           {account ? (
             <AccountModal />
           ) : (
-            <li className="hover_shadow account_modal">
+            <li className="hover_transparent account_modal">
               <button type="button" style={{ color: '#05195a', fontWeight: 'bold' }} onClick={toggleWalletModal}>
                 Connect Wallet
               </button>

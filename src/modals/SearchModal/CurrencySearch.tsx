@@ -165,7 +165,7 @@ export function CurrencySearch({
           value={searchQuery}
           onChange={handleInput}
           onKeyDown={handleEnter}
-          className="w-full bg-light-800 hover_shadow border-blue focus:border-blue rounded placeholder-secondary font-bold text-base p-4 appearance-none"
+          className="w-full bg-light-800 hover_transparent border-blue focus:border-blue rounded placeholder-secondary font-bold text-base p-4 appearance-none"
         />
       )}
       {showCommonBases && <CommonBases />}

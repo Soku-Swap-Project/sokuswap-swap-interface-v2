@@ -43,8 +43,8 @@ const HeaderNew: FC<HeaderNewProps> = ({ inputCurrency, outputCurrency, trident 
         >
           <Typography
             weight={700}
-            style={{ padding: '12px', color: '#05195a', borderRadius: '14px' }}
-            className="text-secondary hover_shadow_button hover:text-white"
+            style={{ padding: '12px', color: '#05195a', borderRadius: '7px' }}
+            className="text-secondary hover_transparent hover:text-white"
           >
             {i18n._(t`Swap`)}
           </Typography>
@@ -58,8 +58,8 @@ const HeaderNew: FC<HeaderNewProps> = ({ inputCurrency, outputCurrency, trident 
         >
           <Typography
             weight={700}
-            style={{ padding: '12px', color: '#05195a', borderRadius: '14px' }}
-            className="text-secondary hover_shadow_button hover:text-white"
+            style={{ padding: '12px', color: '#05195a', borderRadius: '7px' }}
+            className="text-secondary hover_transparent hover:text-white"
           >
             {i18n._(t`Cross-Swap`)}
           </Typography>
