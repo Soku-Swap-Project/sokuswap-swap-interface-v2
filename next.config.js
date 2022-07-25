@@ -136,11 +136,11 @@ const nextConfig = {
       },
     ]
   },
-  i18n: {
-    localeDetection: true,
-    locales,
-    defaultLocale: sourceLocale,
-  },
+  // i18n: {
+  //   localeDetection: false,
+  //   locales,
+  //   defaultLocale: sourceLocale,
+  // },
   // serverRuntimeConfig: {},
   publicRuntimeConfig: {
     breakpoints: screens,
