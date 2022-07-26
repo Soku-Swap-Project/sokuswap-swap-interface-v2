@@ -216,12 +216,12 @@ export function useDerivedSwapInfo(
   const inputTokenBalance = useTokenAndEtherBalanceFromContract(
     account ?? undefined,
     (inputCurrency as Token) ?? undefined,
-    chainForTokenA
+    chainForTokenA ?? chainId
   ) // chainForTokenA
   const outputTokenBalance = useTokenAndEtherBalanceFromContract(
     account ?? undefined,
     (outputCurrency as Token) ?? undefined,
-    chainForTokenB
+    chainForTokenB ?? chainId
   ) // chainForTokenB
 
   const isExactIn: boolean = independentField === Field.INPUT
