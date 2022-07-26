@@ -94,9 +94,6 @@ const SokuMenu: React.FC = (props) => {
           <a className="nav_link hover_transparent" href={`${origin}/ethereum/farms`}>
             <li>Farms</li>
           </a>
-          <a className="nav_link hover_transparent" href={`${origin}/ethereum/staking/`}>
-            <li>Staking</li>
-          </a>
           <a
             className="nav_link hover_transparent"
             onClick={() => {

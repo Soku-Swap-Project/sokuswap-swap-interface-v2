@@ -170,9 +170,6 @@ const SlideOutMenu: FC = () => {
           <a className="nav_link_mobile" href={`${origin}/ethereum/farms`}>
             <li>Farms</li>
           </a>
-          <a className="nav_link_mobile" href={`${origin}/ethereum/staking/`}>
-            <li>Staking</li>
-          </a>
           <a
             className="nav_link_mobile"
             onClick={() => {
