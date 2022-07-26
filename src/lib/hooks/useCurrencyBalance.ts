@@ -1,4 +1,5 @@
 import { Interface } from '@ethersproject/abi'
+import { ExternalProvider } from '@ethersproject/providers'
 import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@sushiswap/core-sdk'
 import ERC20_ABI from 'app/constants/abis/erc20.json'
 import { getErc20Contract } from 'app/functions'
@@ -181,7 +182,10 @@ export default function useCurrencyBalance(
 
 export function useTokenAndEtherBalanceFromContract(account?: string, token?: Token, chainId?: number) {
   const web3 = getWeb3ProviderInstance(chainId)
-  const provider = new ethers.providers.Web3Provider(getWeb3Provider(chainId) as any)
+  const provider = new ethers.providers.Web3Provider(
+    (getWeb3Provider(chainId) as ExternalProvider) ??
+      'https://speedy-nodes-nyc.moralis.io/a80a9a59f7e3ae9405c48919/eth/mainnet'
+  )
   const [balance, setBalance] = useState<number>(0)
 
   // if (!account) {
