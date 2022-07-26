@@ -6,7 +6,7 @@
   "orientation": "portrait",
   "theme_color": "#0D0415",
   "background_color": "#0D0415",
-  "start_url": "/",
+  "start_url": "/swap",
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
