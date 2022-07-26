@@ -59,14 +59,14 @@ const nextConfig = {
   //   nextScriptWorkers: true,
   // },
   poweredByHeader: false,
-  productionBrowserSourceMaps: false,
+  productionBrowserSourceMaps: true,
   swcMinify: false,
   reactStrictMode: true,
-  // pwa: {
-  //   dest: 'public',
-  //   runtimeCaching,
-  //   disable: process.env.NODE_ENV === 'development',
-  // },
+  pwa: {
+    dest: 'public',
+    runtimeCaching,
+    disable: process.env.NODE_ENV === 'development',
+  },
   images: {
     loader: 'cloudinary',
     path: 'https://res.cloudinary.com/sushi-cdn/image/fetch/',
