@@ -10,7 +10,7 @@ import {
   useSingleContractMultipleDataWithChainId,
 } from 'app/lib/hooks/multicall'
 import { useActiveWeb3React } from 'app/services/web3'
-import { getWeb3Provider, getWeb3ProviderInstance } from 'connectors/web3Providers'
+import { getWeb3ProviderInstance } from 'connectors/web3Providers'
 import { ethers } from 'ethers'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
@@ -183,9 +183,7 @@ export default function useCurrencyBalance(
 export function useTokenAndEtherBalanceFromContract(account?: string, token?: Token, chainId?: number) {
   const web3 = getWeb3ProviderInstance(chainId)
   // const provider = new ethers.providers.Web3Provider(getWeb3Provider(chainId) as ExternalProvider)
-  const provider = new ethers.providers.Web3Provider(
-    (web3.currentProvider as ExternalProvider) || (getWeb3Provider(chainId) as ExternalProvider)
-  )
+  const provider = new ethers.providers.Web3Provider(web3.currentProvider as ExternalProvider)
 
   const [balance, setBalance] = useState<number>(0)
 

@@ -15,7 +15,10 @@ let EthProvider: any
 export const getEthProvider = (): any => {
   if (!EthProvider) {
     // EthProvider = new Web3.providers.HttpProvider(process.env.NEXT_PUBLIC_ETH_RPC as any)
-    EthProvider = new Web3HttpProvider(process.env.NEXT_PUBLIC_ETH_RPC, options)
+    EthProvider = new Web3.providers.WebsocketProvider(
+      'wss://eth-mainnet.nodereal.io/ws/v1/1659dfb40aa24bbb8153a677b98064d7'
+    )
+    // EthProvider = new Web3HttpProvider(process.env.NEXT_PUBLIC_ETH_RPC, options)
   }
   return EthProvider
 }
@@ -26,7 +29,9 @@ export const getBSCProvider = (): any => {
     // BSCProvider = new Web3.providers.HttpProvider(
     //   process.env.NEXT_PUBLIC_BSC_RPC || 'https://bsc-dataseed.binance.org/'
     // )
-    BSCProvider = new Web3HttpProvider(process.env.NEXT_PUBLIC_BSC_RPC, options)
+    BSCProvider = new Web3.providers.WebsocketProvider(
+      'wss://bsc-mainnet.nodereal.io/ws/v1/64a9df0874fb4a93b9d0a3849de012d3'
+    )
   }
   return BSCProvider
 }
@@ -35,7 +40,7 @@ let PolygonProvider: any
 export const getPolygonProvider = (): any => {
   if (!PolygonProvider) {
     // PolygonProvider = new Web3.providers.HttpProvider(process.env.NEXT_PUBLIC_POLYGON_RPC as any)
-    PolygonProvider = new Web3HttpProvider(process.env.NEXT_PUBLIC_POLYGON_RPC, options)
+    PolygonProvider = new Web3.providers.WebsocketProvider('wss://rpc-mainnet.matic.network')
   }
   return PolygonProvider
 }
@@ -44,7 +49,7 @@ let AvalancheProvider: any
 export const getAvalancheProvider = (): any => {
   if (!AvalancheProvider) {
     // AvalancheProvider = new Web3.providers.HttpProvider(process.env.NEXT_PUBLIC_AVALANCHE_RPC as any)
-    AvalancheProvider = new Web3HttpProvider(process.env.NEXT_PUBLIC_AVALANCHE_RPC, options)
+    AvalancheProvider = new Web3.providers.WebsocketProvider('wss://api.avax.network/ext/bc/C/ws')
   }
   return AvalancheProvider
 }
@@ -53,7 +58,7 @@ let MoonRiverProvider: any
 export const getMoonRiverProvider = (): any => {
   if (!MoonRiverProvider) {
     // MoonRiverProvider = new Web3.providers.HttpProvider(process.env.NEXT_PUBLIC_MOONRIVER_RPC as any)
-    MoonRiverProvider = new Web3HttpProvider(process.env.NEXT_PUBLIC_MOONRIVER_RPC, options)
+    MoonRiverProvider = new Web3.providers.WebsocketProvider('wss://wss.api.moonriver.moonbeam.network')
   }
   return MoonRiverProvider
 }
@@ -61,7 +66,7 @@ let FantomProvider: any
 export const getFantomProvider = (): any => {
   if (!FantomProvider) {
     // FantomProvider = new Web3.providers.HttpProvider(process.env.NEXT_PUBLIC_FANTOM_RPC as any)
-    FantomProvider = new Web3HttpProvider(process.env.NEXT_PUBLIC_FANTOM_RPC, options)
+    FantomProvider = new Web3.providers.WebsocketProvider('wss://fantom-mainnet.public.blastapi.io/')
   }
   return FantomProvider
 }
@@ -69,7 +74,7 @@ let HarmonyProvider: any
 export const getHarmonyProvider = (): any => {
   if (!HarmonyProvider) {
     // HarmonyProvider = new Web3.providers.HttpProvider(process.env.NEXT_PUBLIC_HARMONY_RPC as any)
-    HarmonyProvider = new Web3HttpProvider(process.env.NEXT_PUBLIC_HARMONY_RPC, options)
+    HarmonyProvider = new Web3.providers.WebsocketProvider('wss://ws.s0.t.hmny.io/')
   }
   return HarmonyProvider
 }
