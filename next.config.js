@@ -8,17 +8,17 @@ const { ChainId } = require('@sushiswap/core-sdk')
 const { locales, sourceLocale } = linguiConfig
 const { screens } = defaultTheme
 
-module.exports = {
-  webpack(config) {
-    // we depend on nextjs switching to webpack 4 by default. Probably they will
-    // change this behavior at some future major version.
-    config.node = {
-      fs: 'empty', // webpack4 era solution
-    }
+// module.exports = {
+//   webpack(config) {
+//     // we depend on nextjs switching to webpack 4 by default. Probably they will
+//     // change this behavior at some future major version.
+//     config.node = {
+//       fs: 'empty', // webpack4 era solution
+//     }
 
-    return config
-  },
-}
+//     return config
+//   },
+// }
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -73,11 +73,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // {
-      //   source: '/',
-      //   destination: '/swap',
-      //   permanent: true,
-      // },
+      {
+        source: '/',
+        destination: '/swap',
+        permanent: true,
+      },
       {
         source: '/analytics/pairs/:path*',
         destination: '/analytics/pools/:path*',
