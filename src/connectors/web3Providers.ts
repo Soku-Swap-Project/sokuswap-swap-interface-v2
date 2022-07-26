@@ -12,7 +12,6 @@ const options = {
 }
 
 let EthProvider: any
-
 export const getEthProvider = (): any => {
   if (!EthProvider) {
     // EthProvider = new Web3.providers.HttpProvider(process.env.NEXT_PUBLIC_ETH_RPC as any)
