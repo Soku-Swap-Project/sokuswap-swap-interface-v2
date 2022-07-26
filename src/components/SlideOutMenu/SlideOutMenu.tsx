@@ -116,7 +116,7 @@ const SlideOutMenu: FC = () => {
     if (chainId === SupportedChainId.BSC_MAINNET) {
       return (
         <>
-          <Link href="/swap/" as="/swap/">
+          <Link href="/swap" as="/swap">
             <li
               style={{ borderRadius: '7px', padding: '14px' }}
               className="nav_link_mobile hover_shadow emphasized-selected active_mobile_link"
@@ -153,7 +153,7 @@ const SlideOutMenu: FC = () => {
     } else if (chainId === SupportedChainId.MAINNET) {
       return (
         <>
-          <Link href="/swap/" as="/swap/">
+          <Link href="/swap" as="/swap">
             <li
               style={{ borderRadius: '7px', padding: '14px' }}
               className="nav_link_mobile hover_shadow emphasized-selected active_mobile_link"
@@ -186,7 +186,7 @@ const SlideOutMenu: FC = () => {
       )
     }
     return (
-      <Link href="/swap/" as="/swap/">
+      <Link href="/swap" as="/swap">
         <li
           style={{ borderRadius: '7px', padding: '14px' }}
           className={'nav_link_mobile hover_shadow emphasized-selected active_mobile_link'}

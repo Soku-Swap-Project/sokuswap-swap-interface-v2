@@ -26,7 +26,7 @@ const SokuMenu: React.FC = (props) => {
   const { launchTransak } = useTransak()
   const toggleWalletModal = useWalletModalToggle()
   const router = useRouter()
-  const isTradeActive = router.pathname === '/cross-swap' || router.pathname === '/swap/'
+  const isTradeActive = router.pathname === '/cross-swap' || router.pathname === '/swap'
   const origin = window.location.origin
 
   const openHiddenLinks = () => {
@@ -43,7 +43,7 @@ const SokuMenu: React.FC = (props) => {
     if (chainId === SupportedChainId.BSC_MAINNET) {
       return (
         <>
-          <Link href="/swap/" as="/swap/">
+          <Link href="/swap" as="/swap">
             <span
               className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
             >
@@ -78,7 +78,7 @@ const SokuMenu: React.FC = (props) => {
     } else if (chainId === SupportedChainId.MAINNET) {
       return (
         <>
-          <Link href="/swap/" as="/swap/">
+          <Link href="/swap" as="/swap">
             <span
               className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
             >
@@ -109,7 +109,7 @@ const SokuMenu: React.FC = (props) => {
       )
     }
     return (
-      <Link href="/swap/" as="/swap/">
+      <Link href="/swap" as="/swap">
         <li
           style={{ borderRadius: '7px', color: '#05195a' }}
           className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
