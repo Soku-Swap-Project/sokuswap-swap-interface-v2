@@ -88,7 +88,7 @@ export default function AccountModal() {
     <>
       <li
         type="button"
-        className={isMobile ? 'account_modal_mobile' : 'account_modal' + ' hover_shadow p-3'}
+        className={isMobile ? 'account_modal_mobile' : 'account_modal' + ' hover_transparent p-3'}
         onClick={handleOpen}
       >
         <span>Account:</span>

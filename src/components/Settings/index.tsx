@@ -36,7 +36,7 @@ const SettingsTab: FC<SettingsTabProps> = ({ placeholderSlippage, className, tri
       <Popover
         placement="bottom-end"
         content={
-          <div className="flex flex-col gap-3 p-3 border rounded shadow-xl bg-dark-900 w-80 border-dark-700">
+          <div className="flex flex-col gap-3 p-3 rounded shadow-xl bg-dark-900 w-80">
             <div className="flex flex-col gap-4 p-3 border rounded border-light-800/60">
               <Typography variant="xxs" weight={700} className="text-blue">
                 {i18n._(t`Transaction Settings`)}
