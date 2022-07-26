@@ -73,11 +73,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // {
-      //   source: '/',
-      //   destination: '/swap',
-      //   permanent: true,
-      // },
+      {
+        source: '/swap',
+        destination: '/swap',
+        permanent: true,
+      },
       {
         source: '/analytics/pairs/:path*',
         destination: '/analytics/pools/:path*',
@@ -100,6 +100,10 @@ const nextConfig = {
       {
         source: '/stake',
         destination: '/bar',
+      },
+      {
+        source: '/swap',
+        destination: '/swap',
       },
       {
         source: '/add/:token*',
