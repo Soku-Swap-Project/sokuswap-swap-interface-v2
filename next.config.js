@@ -75,7 +75,7 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/swap',
+        destination: '/swap/',
         permanent: true,
       },
       {
