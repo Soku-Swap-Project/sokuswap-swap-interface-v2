@@ -74,8 +74,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/swap/',
-        destination: '/swap/',
+        source: '/swap',
+        destination: '/swap',
         permanent: true,
       },
       {
@@ -102,8 +102,8 @@ const nextConfig = {
         destination: '/bar',
       },
       {
-        source: '/swap/',
-        destination: '/swap/',
+        source: '/swap',
+        destination: '/swap',
       },
       {
         source: '/add/:token*',
