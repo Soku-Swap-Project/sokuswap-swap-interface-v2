@@ -214,13 +214,13 @@ export function useTokenAndEtherBalanceFromContract(account?: string, token?: To
     const formattedBal = b ? web3.utils.fromWei(b.toString(), 'ether') : '0'
     setBalance(parseFloat(formattedBal))
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [balance, setBalance, token, chainId, account])
+  }, [balance, setBalance, token, chainId, account, erc20Contract])
 
   useEffect(() => {
     if (account && chainId) {
       fetchBalance()
     }
-  }, [balance, setBalance, token, chainId, account, fetchBalance])
+  }, [balance, setBalance, token, chainId, account, erc20Contract, fetchBalance])
 
   return balance
 }
