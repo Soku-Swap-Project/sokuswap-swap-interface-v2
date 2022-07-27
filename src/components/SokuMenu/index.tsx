@@ -48,7 +48,7 @@ const SokuMenu: React.FC = (props) => {
             <span
               className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
             >
-              <li style={{ borderRadius: '7px', padding: '7x' }}>Trade</li>
+              <li style={{ borderRadius: '7px', padding: '7px' }}>Trade</li>
             </span>
           </Link>
           <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bsc/#/limit-order">

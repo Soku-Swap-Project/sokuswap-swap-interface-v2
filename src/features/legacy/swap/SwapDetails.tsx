@@ -1,5 +1,5 @@
 import { Disclosure, Transition } from '@headlessui/react'
-import { ChevronDownIcon, ExternalLinkIcon } from '@heroicons/react/outline'
+import { ChevronDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { Currency, CurrencyAmount, NATIVE } from '@sushiswap/core-sdk'
@@ -15,7 +15,6 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { useSwapState } from 'app/state/swap/hooks'
 import { useExpertModeManager } from 'app/state/user/hooks'
 import { TradeUnion } from 'app/types'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { FC, Fragment, useMemo, useState } from 'react'
 import { CrossChainTrade, InstantTrade } from 'rubic-sdk'
@@ -254,7 +253,7 @@ const SwapDetailsContent: FC<SwapDetails> = ({
       </div>
       {sushiGuardEnabled && (
         <div className="flex flex-col gap-1 py-2">
-          <div className="grid grid-cols-2 gap-4">
+          {/* <div className="grid grid-cols-2 gap-4">
             <Typography variant="xs" className="text-secondary">
               {i18n._(t`SushiGuard Gas Rebate`)}
             </Typography>
@@ -266,7 +265,7 @@ const SwapDetailsContent: FC<SwapDetails> = ({
                 </Typography>
               </a>
             </Link>
-          </div>
+          </div> */}
           <div className="grid grid-cols-2 gap-4">
             <Typography variant="xs" className="text-secondary">
               {i18n._(t`Max Fee`)}

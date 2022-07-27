@@ -202,8 +202,6 @@ const Swap = ({ banners }: SwapProps) => {
 
   const minAmountReceived = rubicTrade?.toTokenAmountMin?.tokenAmount
 
-  console.log(minAmountReceived?.toString(), estimatedReceivedAmountAsString)
-
   // check whether the user has approved the router on the input token
   const [approvalState, approveCallback] = useApproveCallbackFromTrade(trade, allowedSlippage)
 
@@ -391,6 +389,8 @@ const Swap = ({ banners }: SwapProps) => {
         return 'text-red'
     }
   }, [priceImpactSeverity])
+
+  console.log(isLoading, 'loading')
 
   return (
     <div style={{ marginTop: '-20px' }}>
@@ -593,6 +593,8 @@ const Swap = ({ banners }: SwapProps) => {
                 ? i18n._(t`Swap Anyway`)
                 : userHasSpecifiedInputOutput && !rubicTrade
                 ? 'No Trade Available'
+                : isLoading
+                ? 'Finding Best Trade...'
                 : i18n._(t`Swap`)}
             </Button>
           )}
