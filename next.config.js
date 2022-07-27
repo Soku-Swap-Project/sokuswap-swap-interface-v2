@@ -76,7 +76,7 @@ const nextConfig = {
       {
         source: '/',
         destination: '/swap/',
-        permanent: true,
+        permanent: false,
       },
       {
         source: '/analytics/pairs/:path*',
@@ -101,10 +101,10 @@ const nextConfig = {
         source: '/stake',
         destination: '/bar',
       },
-      {
-        source: '/swap',
-        destination: '/swap',
-      },
+      // {
+      //   source: '/swap',
+      //   destination: '/swap',
+      // },
       {
         source: '/add/:token*',
         destination: '/legacy/add/:token*',
