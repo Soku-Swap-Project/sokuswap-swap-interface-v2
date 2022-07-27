@@ -202,6 +202,8 @@ const Swap = ({ banners }: SwapProps) => {
 
   const minAmountReceived = rubicTrade?.toTokenAmountMin?.tokenAmount
 
+  console.log(minAmountReceived?.toString(), estimatedReceivedAmountAsString)
+
   // check whether the user has approved the router on the input token
   const [approvalState, approveCallback] = useApproveCallbackFromTrade(trade, allowedSlippage)
 

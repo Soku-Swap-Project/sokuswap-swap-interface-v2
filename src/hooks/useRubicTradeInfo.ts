@@ -1,7 +1,7 @@
 import useRubicSDK from 'hooks/useRubicSDK'
 import { useCallback, useEffect, useState } from 'react'
 // import { useLocation } from 'react-router-dom'
-import { BlockchainName, CrossChainTrade, InstantTrade, RubicSdkError } from 'rubic-sdk'
+import { BlockchainName, BLOCKCHAIN_NAME, CrossChainTrade, InstantTrade, RubicSdkError } from 'rubic-sdk'
 
 export const useRubicTradeInfo = (
   fromBlockchain: BlockchainName,
@@ -37,13 +37,7 @@ export const useRubicTradeInfo = (
           {
             gasCalculation: 'rubicOptimisation',
             slippageTolerance: slippage,
-            disabledProviders: [
-              'ONE_INCH_ETHEREUM',
-              // 'UNISWAP_V2',
-              'UNI_SWAP_V3_ETHEREUM',
-              'ONE_INCH_BSC',
-              'SUSHI_SWAP_BSC',
-            ],
+            disabledProviders: blockchain === BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN ? ['SUSHI_SWAP'] : [],
           }
         )
 
@@ -56,6 +50,7 @@ export const useRubicTradeInfo = (
           return []
         })
         setAvailableTrades(trades)
+        // console.log(trades)
         const bestTrade = supportedTrades ? supportedTrades[0] : undefined
         setRubicTrade(bestTrade)
 
