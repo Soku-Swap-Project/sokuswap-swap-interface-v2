@@ -54,7 +54,7 @@ export const NavigationItem: FC<NavigationItem> = ({ node }) => {
           <Popover.Button ref={buttonRef}>
             <Typography
               weight={700}
-              style={{ padding: '12px', color: '#05195a', borderRadius: '14px' }}
+              style={{ padding: '12px', color: '#05195a', borderRadius: '7px' }}
               variant="sm"
               className={classNames(
                 open ? 'text-white' : '',

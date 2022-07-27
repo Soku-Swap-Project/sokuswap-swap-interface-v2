@@ -4,6 +4,7 @@ import { useLingui } from '@lingui/react'
 import { Currency, JSBI, Percent, Token, Trade as V2Trade, TradeType } from '@sushiswap/core-sdk'
 import Banner from 'app/components/Banner'
 import Button from 'app/components/Button'
+import Dots from 'app/components/Dots'
 import RecipientField from 'app/components/RecipientField'
 import Typography from 'app/components/Typography'
 import Web3Connect from 'app/components/Web3Connect'
@@ -52,7 +53,15 @@ const Swap = ({ banners }: SwapProps) => {
 
   const [isExpertMode] = useExpertModeManager()
   const { independentField, typedValue, recipient } = useSwapState()
-  const { v2Trade, parsedAmount, currencies, inputError: swapInputError, allowedSlippage, to } = useDerivedSwapInfo()
+  const {
+    v2Trade,
+    parsedAmount,
+    currencies,
+    currencyBalances,
+    inputError: swapInputError,
+    allowedSlippage,
+    to,
+  } = useDerivedSwapInfo()
   const slippageFloat = parseFloat(allowedSlippage.toSignificant(3))
   const [loadedInputCurrency, loadedOutputCurrency] = [
     useCurrency(loadedUrlParams?.inputCurrencyId),
@@ -60,6 +69,7 @@ const Swap = ({ banners }: SwapProps) => {
   ]
 
   const selectedChain = getChainTypeByChainId(chainId ?? 56)
+  const inputTokenBalance = currencyBalances.INPUT
 
   const [dismissTokenWarning, setDismissTokenWarning] = useState<boolean>(false)
   const urlLoadedTokens: Token[] = useMemo(
@@ -165,6 +175,8 @@ const Swap = ({ banners }: SwapProps) => {
     : (currencies[Field.OUTPUT] as WrappedTokenInfo)?.address
 
   const fromAmount = parseFloat(formattedAmounts[Field.INPUT])
+
+  const insufficientFunds = fromAmount > Number(inputTokenBalance)
 
   const { rubicTrade, availableTrades, isLoading } = useRubicTradeInfo(
     CHAIN_IDS_TO_NAMES[chainId as SupportedChainId] as BlockchainName,
@@ -390,6 +402,10 @@ const Swap = ({ banners }: SwapProps) => {
     }
   }, [priceImpactSeverity])
 
+  const findingTrade = () => {
+    return <Dots>Finding Best Trade</Dots>
+  }
+
   return (
     <div style={{ marginTop: '-20px' }}>
       <NextSeo title="Swap" />
@@ -579,12 +595,17 @@ const Swap = ({ banners }: SwapProps) => {
                 (priceImpactSeverity > 3 && !isExpertMode) ||
                 hasTradeError ||
                 isLoading ||
-                !userHasSpecifiedInputOutput
+                !userHasSpecifiedInputOutput ||
+                insufficientFunds
               }
               className="rounded-2xl md:rounded emphasize_swap_button"
             >
               {hasTradeError
                 ? rubicTradeError()
+                : insufficientFunds
+                ? 'Insufficient Funds'
+                : isLoading && userHasSpecifiedInputOutput
+                ? findingTrade()
                 : priceImpactSeverity > 3 && !isExpertMode
                 ? i18n._(t`Price Impact Too High`)
                 : priceImpactSeverity > 2

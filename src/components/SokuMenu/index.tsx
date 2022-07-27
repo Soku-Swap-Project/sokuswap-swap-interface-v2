@@ -23,6 +23,7 @@ import Web3Status from '../Web3Status'
 
 const SokuMenu: React.FC = (props) => {
   const { account, chainId } = useActiveWeb3React()
+  const chain = chainId ?? 1
   const { launchTransak } = useTransak()
   const toggleWalletModal = useWalletModalToggle()
   const router = useRouter()
@@ -40,31 +41,33 @@ const SokuMenu: React.FC = (props) => {
   }
 
   const MenuByChain = () => {
-    if (chainId === SupportedChainId.BSC_MAINNET) {
+    if (chain === SupportedChainId.BSC_MAINNET) {
       return (
         <>
-          <Link href="/swap">
-            <span className={'nav_link hover_shadow' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}>
-              <li style={{ borderRadius: '14px' }}>Trade</li>
+          <Link href="/swap" as="/swap">
+            <span
+              className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
+            >
+              <li style={{ borderRadius: '7px', padding: '7px' }}>Trade</li>
             </span>
           </Link>
-          <a className="nav_link hover_shadow" href={`${origin}/bsc/#/limit-order`}>
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bsc/#/limit-order">
             <li>Limit Orders</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bsc/#/pool`}>
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bsc/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bridge`}>
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bsc/farms`}>
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bsc/farms">
             <li>Farms</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bsc/staking/`}>
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bsc/staking/">
             <li>Staking</li>
           </a>
           <a
-            className="nav_link hover_shadow"
+            className="nav_link hover_transparent"
             onClick={() => {
               launchTransak()
             }}
@@ -73,28 +76,27 @@ const SokuMenu: React.FC = (props) => {
           </a>
         </>
       )
-    } else if (chainId === SupportedChainId.MAINNET) {
+    } else if (chain === SupportedChainId.MAINNET) {
       return (
         <>
-          <Link href="/swap">
-            <span className={'nav_link hover_shadow' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}>
-              <li style={{ borderRadius: '14px' }}>Trade</li>
+          <Link href="/swap" as="/swap">
+            <span
+              className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
+            >
+              <li style={{ borderRadius: '7px', padding: '7px' }}>Trade</li>
             </span>
           </Link>
-          <a className="nav_link hover_shadow" href={`${origin}/ethereum/#/pool`}>
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/ethereum/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/bridge`}>
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/ethereum/farms`}>
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/ethereum/farms">
             <li>Farms</li>
           </a>
-          <a className="nav_link hover_shadow" href={`${origin}/ethereum/staking/`}>
-            <li>Staking</li>
-          </a>
           <a
-            className="nav_link hover_shadow"
+            className="nav_link hover_transparent"
             onClick={() => {
               launchTransak()
             }}
@@ -105,10 +107,10 @@ const SokuMenu: React.FC = (props) => {
       )
     }
     return (
-      <Link href="/swap">
+      <Link href="/swap" as="/swap">
         <li
-          style={{ borderRadius: '14px', color: '#05195a' }}
-          className={'nav_link hover_shadow' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
+          style={{ borderRadius: '7px', padding: '7px', color: '#05195a' }}
+          className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
         >
           Trade
         </li>
@@ -126,23 +128,23 @@ const SokuMenu: React.FC = (props) => {
           {MenuByChain()}
         </ul>
         <ul className="connectWallet__options__DESKTOP">
-          {chainId && (
+          {chain && (
             <div style={{ display: 'flex', padding: '10px', fontWeight: 'bold', alignItems: 'center' }}>
               <img
-                src={NETWORK_ICON[chainId as number]}
+                src={NETWORK_ICON[chain as number]}
                 width="24px"
                 height="24px"
                 style={{ borderRadius: '24px', objectFit: 'contain', marginRight: '8px' }}
                 alt="network icon"
               />{' '}
-              {NETWORK_LABEL_SHORT[chainId as number]}
+              {NETWORK_LABEL_SHORT[chain as number]}
             </div>
           )}
 
           {account ? (
             <AccountModal />
           ) : (
-            <li className="hover_shadow account_modal">
+            <li className="hover_transparent account_modal">
               <button type="button" style={{ color: '#05195a', fontWeight: 'bold' }} onClick={toggleWalletModal}>
                 Connect Wallet
               </button>

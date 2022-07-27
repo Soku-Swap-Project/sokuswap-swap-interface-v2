@@ -1,4 +1,5 @@
 import { Interface } from '@ethersproject/abi'
+import { ExternalProvider } from '@ethersproject/providers'
 import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@sushiswap/core-sdk'
 import ERC20_ABI from 'app/constants/abis/erc20.json'
 import { getErc20Contract } from 'app/functions'
@@ -181,7 +182,9 @@ export default function useCurrencyBalance(
 
 export function useTokenAndEtherBalanceFromContract(account?: string, token?: Token, chainId?: number) {
   const web3 = getWeb3ProviderInstance(chainId)
-  const provider = new ethers.providers.Web3Provider(getWeb3Provider(chainId) as any)
+  const provider = new ethers.providers.Web3Provider(getWeb3Provider(chainId) as ExternalProvider)
+  // const provider = new ethers.providers.Web3Provider(web3.currentProvider as ExternalProvider)
+
   const [balance, setBalance] = useState<number>(0)
 
   // if (!account) {
@@ -204,6 +207,7 @@ export function useTokenAndEtherBalanceFromContract(account?: string, token?: To
         }
         return bal
       } catch (e) {
+        console.log(e, 'e')
         return 0
       }
     }
@@ -211,13 +215,13 @@ export function useTokenAndEtherBalanceFromContract(account?: string, token?: To
     const formattedBal = b ? web3.utils.fromWei(b.toString(), 'ether') : '0'
     setBalance(parseFloat(formattedBal))
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [balance, setBalance, token, chainId, account])
+  }, [balance, setBalance, token, chainId, account, erc20Contract])
 
   useEffect(() => {
     if (account && chainId) {
       fetchBalance()
     }
-  }, [balance, setBalance, token, chainId, account, fetchBalance])
+  }, [balance, setBalance, token, chainId, account, erc20Contract, fetchBalance])
 
   return balance
 }

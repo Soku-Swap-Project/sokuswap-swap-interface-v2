@@ -1,5 +1,6 @@
 {
-  "name": "sushiswap-interface",
+  "name": "sokuswap-interface",
+  "homepage": ".",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -260,6 +261,7 @@
     "material-icons": "^1.11.5",
     "react-router-dom": "^6.3.0",
     "rubic-sdk": "^2.2.5",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "web3-providers-http": "^1.7.4"
   }
 }
