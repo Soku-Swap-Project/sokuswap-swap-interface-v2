@@ -106,6 +106,7 @@ const SlideOutMenu: FC = () => {
   }
   const { launchTransak } = useTransak()
   const { account, chainId, library } = useActiveWeb3React()
+  const chain = chainId ?? 1
   const toggleWalletModal = useWalletModalToggle()
   const isCoinbaseWallet = useIsCoinbaseWallet()
   const router = useRouter()
@@ -113,7 +114,7 @@ const SlideOutMenu: FC = () => {
   const origin = window.location.origin
 
   const MenuByChain = () => {
-    if (chainId === SupportedChainId.BSC_MAINNET) {
+    if (chain === SupportedChainId.BSC_MAINNET) {
       return (
         <>
           <Link href="/swap" as="/swap">
@@ -124,19 +125,19 @@ const SlideOutMenu: FC = () => {
               Trade
             </li>
           </Link>
-          <a className="nav_link_mobile" href={`${origin}/bsc/#/limit-order`}>
+          <a className="nav_link_mobile" href="app.sokuswap.finance/bsc/#/limit-order">
             <li>Limit Orders</li>
           </a>
-          <a className="nav_link_mobile" href={`${origin}/bsc/#/pool`}>
+          <a className="nav_link_mobile" href="app.sokuswap.finance/bsc/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link_mobile" href={`${origin}/bridge`}>
+          <a className="nav_link_mobile" href="app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link_mobile" href={`${origin}/bsc/farms`}>
+          <a className="nav_link_mobile" href="app.sokuswap.finance/bsc/farms">
             <li>Farms</li>
           </a>
-          <a className="nav_link_mobile" href={`${origin}/bsc/staking/`}>
+          <a className="nav_link_mobile" href="app.sokuswap.finance/bsc/staking/">
             <li>Staking</li>
           </a>
           <a
@@ -150,7 +151,7 @@ const SlideOutMenu: FC = () => {
           </a>
         </>
       )
-    } else if (chainId === SupportedChainId.MAINNET) {
+    } else if (chain === SupportedChainId.MAINNET) {
       return (
         <>
           <Link href="/swap" as="/swap">
@@ -161,13 +162,13 @@ const SlideOutMenu: FC = () => {
               Trade
             </li>
           </Link>
-          <a className="nav_link_mobile" href={`${origin}/ethereum/#/pool`}>
+          <a className="nav_link_mobile" href="app.sokuswap.finance/ethereum/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link_mobile" href={`${origin}/bridge`}>
+          <a className="nav_link_mobile" href="app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link_mobile" href={`${origin}/ethereum/farms`}>
+          <a className="nav_link_mobile" href="app.sokuswap.finance/ethereum/farms">
             <li>Farms</li>
           </a>
           <a
@@ -239,13 +240,13 @@ const SlideOutMenu: FC = () => {
                   }}
                 >
                   <img
-                    src={NETWORK_ICON[chainId as number]}
+                    src={NETWORK_ICON[chain as number]}
                     width="24px"
                     height="24px"
                     style={{ borderRadius: '24px', objectFit: 'contain', marginRight: '8px' }}
                     alt="network icon"
                   />{' '}
-                  {NETWORK_LABEL_SHORT[chainId as number]}
+                  {NETWORK_LABEL_SHORT[chain as number]}
                 </div>
               )}
             </div>

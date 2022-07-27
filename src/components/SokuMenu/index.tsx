@@ -23,6 +23,7 @@ import Web3Status from '../Web3Status'
 
 const SokuMenu: React.FC = (props) => {
   const { account, chainId } = useActiveWeb3React()
+  const chain = chainId ?? 1
   const { launchTransak } = useTransak()
   const toggleWalletModal = useWalletModalToggle()
   const router = useRouter()
@@ -40,7 +41,7 @@ const SokuMenu: React.FC = (props) => {
   }
 
   const MenuByChain = () => {
-    if (chainId === SupportedChainId.BSC_MAINNET) {
+    if (chain === SupportedChainId.BSC_MAINNET) {
       return (
         <>
           <Link href="/swap" as="/swap">
@@ -50,19 +51,19 @@ const SokuMenu: React.FC = (props) => {
               <li style={{ borderRadius: '7px', padding: '7x' }}>Trade</li>
             </span>
           </Link>
-          <a className="nav_link hover_transparent" href={`${origin}/bsc/#/limit-order`}>
+          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bsc/#/limit-order">
             <li>Limit Orders</li>
           </a>
-          <a className="nav_link hover_transparent" href={`${origin}/bsc/#/pool`}>
+          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bsc/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link hover_transparent" href={`${origin}/bridge`}>
+          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link hover_transparent" href={`${origin}/bsc/farms`}>
+          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bsc/farms">
             <li>Farms</li>
           </a>
-          <a className="nav_link hover_transparent" href={`${origin}/bsc/staking/`}>
+          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bsc/staking/">
             <li>Staking</li>
           </a>
           <a
@@ -75,7 +76,7 @@ const SokuMenu: React.FC = (props) => {
           </a>
         </>
       )
-    } else if (chainId === SupportedChainId.MAINNET) {
+    } else if (chain === SupportedChainId.MAINNET) {
       return (
         <>
           <Link href="/swap" as="/swap">
@@ -85,13 +86,13 @@ const SokuMenu: React.FC = (props) => {
               <li style={{ borderRadius: '7px', padding: '7px' }}>Trade</li>
             </span>
           </Link>
-          <a className="nav_link hover_transparent" href={`${origin}/ethereum/#/pool`}>
+          <a className="nav_link hover_transparent" href="app.sokuswap.finance/ethereum/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link hover_transparent" href={`${origin}/bridge`}>
+          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link hover_transparent" href={`${origin}/ethereum/farms`}>
+          <a className="nav_link hover_transparent" href="app.sokuswap.finance/ethereum/farms">
             <li>Farms</li>
           </a>
           <a
@@ -127,16 +128,16 @@ const SokuMenu: React.FC = (props) => {
           {MenuByChain()}
         </ul>
         <ul className="connectWallet__options__DESKTOP">
-          {chainId && (
+          {chain && (
             <div style={{ display: 'flex', padding: '10px', fontWeight: 'bold', alignItems: 'center' }}>
               <img
-                src={NETWORK_ICON[chainId as number]}
+                src={NETWORK_ICON[chain as number]}
                 width="24px"
                 height="24px"
                 style={{ borderRadius: '24px', objectFit: 'contain', marginRight: '8px' }}
                 alt="network icon"
               />{' '}
-              {NETWORK_LABEL_SHORT[chainId as number]}
+              {NETWORK_LABEL_SHORT[chain as number]}
             </div>
           )}
 
