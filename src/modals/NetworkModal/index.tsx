@@ -322,9 +322,9 @@ const NetworkModal: FC<Props> = ({ selectedChain, setSelectedChain, disabled }) 
           alignItems: 'center',
           background: 'transparent',
           color: '#05195a',
-          borderRadius: '32px',
+          borderRadius: '7px',
         }}
-        className="network_modal_button"
+        className="hover_transparent"
         disabled={disabled}
         onClick={toggleNetworkModal}
         pending={networkModalOpen}
@@ -335,7 +335,7 @@ const NetworkModal: FC<Props> = ({ selectedChain, setSelectedChain, disabled }) 
             alt="Network Icon"
             height="24px"
             width="24px"
-            style={{ borderRadius: '24px' }}
+            style={{ borderRadius: '7px' }}
           />
         )}
         <Typography style={{ paddingLeft: '4px', fontWeight: 'bolder' }}>{networkTest()}</Typography>
@@ -362,7 +362,7 @@ const NetworkModal: FC<Props> = ({ selectedChain, setSelectedChain, disabled }) 
                     return (
                       <div
                         key={i}
-                        className="network_selector focus:outline-none flex items-center gap-4 w-full px-4 py-3 rounded border border-lightBlue cursor-default"
+                        className="hover_transparent emphasized-selected focus:outline-none flex items-center gap-4 w-full px-4 py-3 cursor-default"
                       >
                         <Image
                           // @ts-ignore TYPE NEEDS FIXING
@@ -387,9 +387,6 @@ const NetworkModal: FC<Props> = ({ selectedChain, setSelectedChain, disabled }) 
                         toggleNetworkModal()
                         const params = SUPPORTED_NETWORKS[key]
                         try {
-                          if (selectedChain) {
-                            console.log(selectedChain, 'selected')
-                          }
                           // else {
                           //   await library?.send('wallet_switchEthereumChain', [
                           //     { chainId: `0x${key.toString(16)}` },
@@ -417,7 +414,7 @@ const NetworkModal: FC<Props> = ({ selectedChain, setSelectedChain, disabled }) 
                         }
                       }}
                       className={classNames(
-                        'network_selector focus:outline-none flex items-center gap-4 w-full px-4 py-3 rounded border border-[#ebebeb] hover_shadow'
+                        'hover_transparent focus:outline-none flex items-center gap-4 w-full px-4 py-3 hover_shadow'
                       )}
                     >
                       {/*@ts-ignore TYPE NEEDS FIXING*/}

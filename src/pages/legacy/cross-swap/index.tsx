@@ -85,6 +85,8 @@ const Swap = ({ banners }: SwapProps) => {
   const inputTokenWrapped = currencies[Field.INPUT]
   const outputTokenWrapped = currencies[Field.OUTPUT]
 
+  const inputTokenBalance = currencyBalances.INPUT
+
   const [dismissTokenWarning, setDismissTokenWarning] = useState<boolean>(false)
   const urlLoadedTokens: Token[] = useMemo(
     () => [loadedInputCurrency, loadedOutputCurrency]?.filter((c): c is Token => c?.isToken ?? false) ?? [],
@@ -189,6 +191,8 @@ const Swap = ({ banners }: SwapProps) => {
     : (currencies[Field.OUTPUT] as WrappedTokenInfo)?.address
 
   const fromAmount = parseFloat(formattedAmounts[Field.INPUT])
+
+  const insufficientFunds = fromAmount > Number(inputTokenBalance)
 
   const { rubicTrade, availableTrades, isLoading, crossChainTradeError } = useRubicTradeInfo(
     selectedFromChain,
@@ -429,8 +433,8 @@ const Swap = ({ banners }: SwapProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [outputTokenWrapped, router, selectedFromChain, selectedToChain, selectedTokenAChainId])
 
-  const loading = () => {
-    return <Dots>Loading</Dots>
+  const findingTrade = () => {
+    return <Dots>Finding Best Trade</Dots>
   }
 
   return (
@@ -585,12 +589,15 @@ const Swap = ({ banners }: SwapProps) => {
                 (priceImpactSeverity > 3 && !isExpertMode) ||
                 hasTradeError ||
                 !userHasSpecifiedInputOutput ||
-                !estimatedRecievedAmount
+                !estimatedRecievedAmount ||
+                insufficientFunds
               }
               className="rounded-2xl md:rounded emphasize_swap_button"
             >
-              {isLoading
-                ? loading()
+              {insufficientFunds
+                ? 'Insufficient Funds'
+                : isLoading
+                ? findingTrade()
                 : crossChainTradeError
                 ? crossChainErrorMessage
                 : priceImpactSeverity > 3 && !isExpertMode

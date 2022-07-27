@@ -226,6 +226,7 @@ const BalancePanel: FC<
     currency as Token,
     selectedChainId ?? chainId
   )
+
   const handleClick = useCallback(() => {
     if (disabled || !balance || !onChange) return
     onChange(balance.toString())
@@ -286,7 +287,7 @@ const SwapAssetPanelHeader: FC<
     </div>
   ) : (
     <Button
-      style={{ background: 'transparent', color: '#05195a', borderRadius: '32px' }}
+      style={{ background: 'transparent', color: '#05195a', borderRadius: '14px' }}
       variant="filled"
       size="sm"
       id={id}
