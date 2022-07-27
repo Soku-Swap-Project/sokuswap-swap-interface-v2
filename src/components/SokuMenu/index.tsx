@@ -46,6 +46,7 @@ const SokuMenu: React.FC = (props) => {
         <>
           <Link href="/swap" as="/swap">
             <span
+              style={{ padding: '12px' }}
               className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
             >
               <li style={{ borderRadius: '7px', padding: '7x' }}>Trade</li>
@@ -81,6 +82,7 @@ const SokuMenu: React.FC = (props) => {
         <>
           <Link href="/swap" as="/swap">
             <span
+              style={{ padding: '12px' }}
               className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
             >
               <li style={{ borderRadius: '7px', padding: '7px' }}>Trade</li>
