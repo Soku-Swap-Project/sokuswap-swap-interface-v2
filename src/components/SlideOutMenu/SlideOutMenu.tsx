@@ -125,19 +125,19 @@ const SlideOutMenu: FC = () => {
               Trade
             </li>
           </Link>
-          <a className="nav_link_mobile" href="app.sokuswap.finance/bsc/#/limit-order">
+          <a className="nav_link_mobile" href="https://app.sokuswap.finance/bsc/#/limit-order">
             <li>Limit Orders</li>
           </a>
-          <a className="nav_link_mobile" href="app.sokuswap.finance/bsc/#/pool">
+          <a className="nav_link_mobile" href="https://app.sokuswap.finance/bsc/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link_mobile" href="app.sokuswap.finance/bridge">
+          <a className="nav_link_mobile" href="https://app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link_mobile" href="app.sokuswap.finance/bsc/farms">
+          <a className="nav_link_mobile" href="https://app.sokuswap.finance/bsc/farms">
             <li>Farms</li>
           </a>
-          <a className="nav_link_mobile" href="app.sokuswap.finance/bsc/staking/">
+          <a className="nav_link_mobile" href="https://app.sokuswap.finance/bsc/staking/">
             <li>Staking</li>
           </a>
           <a
@@ -162,13 +162,13 @@ const SlideOutMenu: FC = () => {
               Trade
             </li>
           </Link>
-          <a className="nav_link_mobile" href="app.sokuswap.finance/ethereum/#/pool">
+          <a className="nav_link_mobile" href="https://app.sokuswap.finance/ethereum/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link_mobile" href="app.sokuswap.finance/bridge">
+          <a className="nav_link_mobile" href="https://app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link_mobile" href="app.sokuswap.finance/ethereum/farms">
+          <a className="nav_link_mobile" href="https://app.sokuswap.finance/ethereum/farms">
             <li>Farms</li>
           </a>
           <a

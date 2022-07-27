@@ -51,19 +51,19 @@ const SokuMenu: React.FC = (props) => {
               <li style={{ borderRadius: '7px', padding: '7x' }}>Trade</li>
             </span>
           </Link>
-          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bsc/#/limit-order">
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bsc/#/limit-order">
             <li>Limit Orders</li>
           </a>
-          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bsc/#/pool">
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bsc/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bridge">
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bsc/farms">
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bsc/farms">
             <li>Farms</li>
           </a>
-          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bsc/staking/">
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bsc/staking/">
             <li>Staking</li>
           </a>
           <a
@@ -86,13 +86,13 @@ const SokuMenu: React.FC = (props) => {
               <li style={{ borderRadius: '7px', padding: '7px' }}>Trade</li>
             </span>
           </Link>
-          <a className="nav_link hover_transparent" href="app.sokuswap.finance/ethereum/#/pool">
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/ethereum/#/pool">
             <li>Pool</li>
           </a>
-          <a className="nav_link hover_transparent" href="app.sokuswap.finance/bridge">
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/bridge">
             <li>Bridge</li>
           </a>
-          <a className="nav_link hover_transparent" href="app.sokuswap.finance/ethereum/farms">
+          <a className="nav_link hover_transparent" href="https://app.sokuswap.finance/ethereum/farms">
             <li>Farms</li>
           </a>
           <a
