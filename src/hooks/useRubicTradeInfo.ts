@@ -37,7 +37,8 @@ export const useRubicTradeInfo = (
           {
             gasCalculation: 'rubicOptimisation',
             slippageTolerance: slippage,
-            disabledProviders: blockchain === BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN ? ['SUSHI_SWAP'] : [],
+            disabledProviders:
+              blockchain === BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN ? ['SUSHI_SWAP'] : ['UNISWAP_V2', 'UNI_SWAP_V3'],
           }
         )
 

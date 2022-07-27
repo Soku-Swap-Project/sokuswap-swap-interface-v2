@@ -226,6 +226,7 @@ const BalancePanel: FC<
     currency as Token,
     selectedChainId ?? chainId
   )
+
   const handleClick = useCallback(() => {
     if (disabled || !balance || !onChange) return
     onChange(balance.toString())

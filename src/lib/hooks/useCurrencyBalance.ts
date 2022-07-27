@@ -207,6 +207,7 @@ export function useTokenAndEtherBalanceFromContract(account?: string, token?: To
         }
         return bal
       } catch (e) {
+        console.log(e, 'e')
         return 0
       }
     }

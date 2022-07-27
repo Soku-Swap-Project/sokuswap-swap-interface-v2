@@ -109,7 +109,7 @@ const SokuMenu: React.FC = (props) => {
     return (
       <Link href="/swap" as="/swap">
         <li
-          style={{ borderRadius: '7px', color: '#05195a' }}
+          style={{ borderRadius: '7px', padding: '7px', color: '#05195a' }}
           className={'nav_link hover_transparent' + isTradeActive ? ' emphasized-selected active_mobile_link' : ''}
         >
           Trade
