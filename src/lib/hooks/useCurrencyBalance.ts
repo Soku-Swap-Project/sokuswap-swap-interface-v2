@@ -182,7 +182,9 @@ export default function useCurrencyBalance(
 
 export function useTokenAndEtherBalanceFromContract(account?: string, token?: Token, chainId?: number) {
   const web3 = getWeb3ProviderInstance(chainId)
-  const provider = new ethers.providers.Web3Provider(getWeb3Provider(chainId) as ExternalProvider)
+  const provider = new ethers.providers.Web3Provider(
+    (getWeb3Provider(chainId) as ExternalProvider) ?? web3.currentProvider
+  )
   // const provider = new ethers.providers.Web3Provider(web3.currentProvider as ExternalProvider)
 
   const [balance, setBalance] = useState<number>(0)
