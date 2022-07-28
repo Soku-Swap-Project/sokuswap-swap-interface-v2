@@ -384,8 +384,8 @@ const NetworkModal: FC<Props> = ({ selectedChain, setSelectedChain, disabled }) 
                       onClick={async () => {
                         setSelectedChain(SUPPORTED_NETWORKS[key].rubicName)
                         console.debug(`Switching to chain ${key}`, SUPPORTED_NETWORKS[key])
-                        toggleNetworkModal()
                         const params = SUPPORTED_NETWORKS[key]
+                        toggleNetworkModal()
                         try {
                           // else {
                           //   await library?.send('wallet_switchEthereumChain', [

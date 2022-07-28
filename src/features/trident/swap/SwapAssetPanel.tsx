@@ -10,7 +10,7 @@ import Typography from 'app/components/Typography'
 import { classNames, formatNumber, tryParseAmount, warningSeverity } from 'app/functions'
 // import { useBentoOrWalletBalance } from 'app/hooks/useBentoOrWalletBalance'
 import { useUSDCValue } from 'app/hooks/useUSDCPrice'
-import { useTokenAndEtherBalanceFromContract } from 'app/lib/hooks/useCurrencyBalance'
+import useCurrencyBalance, { useTokenAndEtherBalanceFromContract } from 'app/lib/hooks/useCurrencyBalance'
 import CurrencySearchModal from 'app/modals/SearchModal/CurrencySearchModal'
 import { useActiveWeb3React } from 'app/services/web3'
 import { getChainIdByRubicName } from 'connectors/helpers'
@@ -221,6 +221,9 @@ const BalancePanel: FC<
   const { i18n } = useLingui()
   const { account, chainId } = useActiveWeb3React()
   const selectedChainId = getChainIdByRubicName(selectedChain as BlockchainName)
+  const isNative = currency?.isNative
+  const nativeBal = useCurrencyBalance(account as string, currency)
+  const nativeBalFormatted = Number(nativeBal?.toSignificant(6))
   const balance = useTokenAndEtherBalanceFromContract(
     account ?? undefined,
     currency as Token,
@@ -234,7 +237,12 @@ const BalancePanel: FC<
 
   return (
     <Typography role="button" onClick={handleClick} variant="sm" className="flex text-secondary whitespace-nowrap">
-      {i18n._(t`Balance:`)} {balance ? balance.toFixed(6) : '0.00'}
+      {i18n._(t`Balance:`)}{' '}
+      {isNative && selectedChainId === chainId && !isNaN(nativeBalFormatted)
+        ? nativeBalFormatted
+        : balance
+        ? balance.toFixed(6)
+        : '0.00'}
     </Typography>
   )
 }

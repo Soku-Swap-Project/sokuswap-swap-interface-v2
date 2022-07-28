@@ -119,10 +119,7 @@ const HeadlessUiModalControlled: FC<ControlledModalProps> = ({
             leaveTo="opacity-0"
           >
             <Dialog.Overlay
-              className={classNames(
-                isDesktop ? 'backdrop-blur-[10px]  bg-[rgb(0,0,0,0.4)]' : ' bg-[rgb(0,0,0,0.8)]',
-                'fixed inset-0 filter'
-              )}
+              className={classNames(isDesktop ? 'bg-[rgb(0,0,0,0.4)]' : ' bg-[rgb(0,0,0,0.8)]', 'fixed inset-0 filter')}
             />
           </Transition.Child>
 
