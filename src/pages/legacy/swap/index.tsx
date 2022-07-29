@@ -176,7 +176,7 @@ const Swap = ({ banners }: SwapProps) => {
 
   const fromAmount = parseFloat(formattedAmounts[Field.INPUT])
 
-  const insufficientFunds = fromAmount > Number(inputTokenBalance)
+  const insufficientFunds = fromAmount > Number(numberFormatter(Number(inputTokenBalance)))
 
   const { rubicTrade, availableTrades, isLoading } = useRubicTradeInfo(
     CHAIN_IDS_TO_NAMES[chainId as SupportedChainId] as BlockchainName,
@@ -600,10 +600,10 @@ const Swap = ({ banners }: SwapProps) => {
               }
               className="rounded-2xl md:rounded emphasize_swap_button"
             >
-              {hasTradeError
-                ? rubicTradeError()
-                : insufficientFunds
+              {insufficientFunds
                 ? 'Insufficient Funds'
+                : hasTradeError
+                ? rubicTradeError()
                 : isLoading && userHasSpecifiedInputOutput
                 ? findingTrade()
                 : priceImpactSeverity > 3 && !isExpertMode

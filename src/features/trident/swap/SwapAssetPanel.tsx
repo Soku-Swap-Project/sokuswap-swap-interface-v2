@@ -16,6 +16,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { getChainIdByRubicName } from 'connectors/helpers'
 import React, { FC, ForwardedRef, forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { BlockchainName } from 'rubic-sdk'
+import { numberFormatter } from 'utils'
 
 import BentoBoxFundingSourceModal from '../add/BentoBoxFundingSourceModal'
 
@@ -223,7 +224,7 @@ const BalancePanel: FC<
   const selectedChainId = getChainIdByRubicName(selectedChain as BlockchainName)
   const isNative = currency?.isNative
   const nativeBal = useCurrencyBalance(account as string, currency)
-  const nativeBalFormatted = Number(nativeBal?.toSignificant(6))
+  const nativeBalFormatted = Number(numberFormatter(nativeBal?.toExact() as string))
   const balance = useTokenAndEtherBalanceFromContract(
     account ?? undefined,
     currency as Token,
@@ -231,9 +232,9 @@ const BalancePanel: FC<
   )
 
   const handleClick = useCallback(() => {
-    if (disabled || !balance || !onChange) return
-    onChange(balance.toString())
-  }, [balance, disabled, onChange])
+    if (disabled || !balance || !nativeBalFormatted || !onChange) return
+    onChange(isNative ? nativeBalFormatted.toString() : balance.toString())
+  }, [nativeBalFormatted, balance, disabled, onChange])
 
   return (
     <Typography role="button" onClick={handleClick} variant="sm" className="flex text-secondary whitespace-nowrap">
