@@ -30,7 +30,7 @@ const noExponents = (num: number) => {
 export function numberFormatter(balance: number | string) {
   const number = new BigNumber(balance)
   const numberAsString = number.toString()
-  const toNum = parseFloat(numberAsString.slice(0, numberAsString.indexOf('.') + 6))
+  const toNum = parseFloat(numberAsString.slice(0, numberAsString.indexOf('.') + 9))
   const formatNumber = noExponents(toNum)
 
   return formatNumber

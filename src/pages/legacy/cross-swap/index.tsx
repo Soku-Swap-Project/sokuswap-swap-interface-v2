@@ -192,7 +192,7 @@ const Swap = ({ banners }: SwapProps) => {
 
   const fromAmount = parseFloat(formattedAmounts[Field.INPUT])
 
-  const insufficientFunds = fromAmount > Number(inputTokenBalance)
+  const insufficientFunds = fromAmount > Number(numberFormatter(Number(inputTokenBalance)))
 
   const { rubicTrade, availableTrades, isLoading, crossChainTradeError } = useRubicTradeInfo(
     selectedFromChain,
